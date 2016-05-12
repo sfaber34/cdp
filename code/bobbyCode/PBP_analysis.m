@@ -1,5 +1,5 @@
 clear
-file = 'CDP_80um_orifice_noflow.csv'
+file = '../data/051216/CDP_20160512_173403.csv'
 period_to_view = 7;
 data = csvread(file, 0, 19);
 s = size(data);
