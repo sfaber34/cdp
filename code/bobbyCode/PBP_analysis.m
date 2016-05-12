@@ -1,5 +1,5 @@
 clear
-file = '../data/051216/CDP_20160512_173403.csv'
+file = '/Volumes/sfaber1/research/cdp/code/data/051216/CDP_20160512_173403.csv'
 period_to_view = 7;
 data = csvread(file, 0, 19);
 s = size(data);
