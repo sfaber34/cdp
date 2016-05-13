@@ -1,7 +1,7 @@
 pro cdpPbp
 
 
-  data=read_csv('../data/cdpPbp050516.csv')
+  data=read_csv('data/CDP_20160512_173403.csv')
 
 ;  t1[0]= where(time eq '18:22:10.70')
 ;  t1[1]= where(time eq '18:22:12.70')
