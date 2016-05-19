@@ -65,17 +65,17 @@ pro dec2bin,inp,out,quiet=quiet
   ;
   ;  trim output depending on nature of input
   ;
-  case datatype(inp) of
+  case size(inp,/tn) of
     'BYT': begin
-      if not keyword_set(quiet) then print,'$(8I1,1X)',out[24:31,*]
+      if not keyword_set(quiet) then print,'$(8I1)',out[24:31,*]
       out = out[24:31,*]
     end
     'INT': begin
-      if not keyword_set(quiet) then print,'$(2(8I1,1X))',out[16:31,*]
+      if not keyword_set(quiet) then print,'$(2(8I1))',out[16:31,*]
       out = out[16:31,*]
     end
     'LON': begin
-      if not keyword_set(quiet) then print,'$(4(8I1,1X))',out
+      if not keyword_set(quiet) then print,'$(4(8I1))',out
     end
     else: begin print,'Error: only integer types allowed.' & out = 0 & end
   endcase

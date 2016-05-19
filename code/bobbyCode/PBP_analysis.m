@@ -1,8 +1,9 @@
 clear
-file = '/Volumes/sfaber1/research/cdp/code/data/051216/CDP_20160512_173403.csv'
-period_to_view = 7;
+file = '/Users/spencerfaber/research/cdp/code/data/shortTest.csv'
+period_to_view = 1;
 data = csvread(file, 0, 19);
 s = size(data);
+
 time_strings = textread(file, '%s', 'whitespace', ',');
 glass_bead_sizes = [8 10 15 20 30 40 50];
 water_sizes = [6.2 7.5 14 15.75 25.25 35 39.5];
