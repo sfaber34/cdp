@@ -4,6 +4,21 @@ pro bin2dec
 xbins=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
 xbinlabels=[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
 
+binLoc=[91,111,159,190,215,243,254,272,301,355,382,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
+x=[80,3700]
+bins=dindgen(n_elements(x))
+
+for i=0,n_elements(x)-1 do begin
+  for e=0,n_elements(binLoc)-1 do begin
+    if x[i] lt binLoc[e] then begin
+      bins[i]=e+1
+      break
+    endif
+  endfor
+endfor
+
+
+
 
 ;data=read_csv('data/CDP_20160512_173403.csv')
 data=read_csv('data/CDP_20160519_203922D.csv')
