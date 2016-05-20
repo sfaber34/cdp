@@ -6,7 +6,7 @@ xbinlabels=[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,
 
 
 ;data=read_csv('data/CDP_20160512_173403.csv')
-data=read_csv('data/shortTest.csv')
+data=read_csv('data/CDP_20160519_203922D.csv')
 
 nRows = n_elements(data.(0))
 
@@ -20,11 +20,14 @@ date=make_array(nRows,/string)
 x=[]
 y=[]
 
+
+firstTime=data.(49)
+
 for u=0,nRows-1 do begin
   date[u]=data.field001[0]
   
   ;ASSIGN PBP
-  for i=0,204 do begin
+  for i=0,254 do begin
     x=data.(i+50)
     pbp[i,u]=x[u]
   endfor
@@ -41,9 +44,9 @@ for u=0,nRows-1 do begin
 ;  endfor
   
   pbpArr=[]
-  firstZero=where(pbp eq 0)
+  ;firstZero=where(pbp eq 0)  
   
-  for i=0,firstZero[0] do begin
+  for i=0,254 do begin
     toDecTime=[]
     toDecD=[]
     
@@ -61,24 +64,27 @@ for u=0,nRows-1 do begin
     for j=0,11 do begin
       toDecD=[toDecD,valD[j]*2.^j]
     endfor
+          
        
     pbpD[i,u]=total(toDecD)
-    pbpTime[i,u]=total(toDecTime)   
+    pbpTime[i,u]=total(toDecTime)+firstTime[u]+u*1000.   
     
   endfor
 endfor
 
-
-for j=0,n_elements(pbpTime[0,*])-1 do begin
-  for i=0,n_elements(pbpTime[*,0])-1 do begin
-    x=[x,pbpTime[i,j]]
-    y=[y,pbpD[i,j]]
-  endfor
-endfor
+pbpTime=pbpTime[where(pbpD ne 0)]
+pbpD=pbpD[where(pbpD ne 0)]
 
 
-p1=scatterplot(x,y)
+;x=reform(pbpTime,n_elements(pbpTime))
+;y=reform(pbpD,n_elements(pbpD))
 
+
+binLoc=[20,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+histBins=histogram(pbpD,locations=binLoc,nbins=30)
+print,pbpD
+p1=scatterplot(pbpTime,pbpD)
+p1.yrange=[1700,2150]
 
 stop
 
