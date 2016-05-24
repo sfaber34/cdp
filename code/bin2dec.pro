@@ -1,7 +1,7 @@
 pro bin2dec
 
 
-binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+binDBounds=[0,2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
 binDLabels=[3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
 
 ;binADCBounds=[91,111,159,190,215,243,254,272,301,355,382,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
@@ -94,14 +94,14 @@ for j=0,n_elements(pbpACD[0,*])-1 do begin
         if e lt 30 then begin
           if binADCBounds[e] gt pbpACD[i,j] then begin
             pbpBin[i,j]=e+1
-            pbpDLow[i,j]=binDBounds[e+1]
+            pbpDLow[i,j]=binDBounds[e]
             pbpDUp[i,j]=binDBounds[e+1]
             break
           endif else begin
             if e eq 30 then begin
               pbpBin[i,j]=e
               pbpDLow[i,j]=binDBounds[e]
-              pbpDUp[i,j]=binDBounds[e]
+              pbpDUp[i,j]=binDBounds[e+1]
               break
             endif
           endelse
@@ -116,6 +116,7 @@ endfor
 
 
 pbpDLow=pbpDLow[where(pbpACD gt .000000001)]
+pbpDUp=pbpDUp[where(pbpACD gt .000000001)]
 pbpTime=pbpTime[where(pbpTime gt .000000001)]
 pbpACD=pbpACD[where(pbpACD gt .000000001)]
 
@@ -124,7 +125,7 @@ pbpACD=pbpACD[where(pbpACD gt .000000001)]
 ;p1.yrange=[1700,2150]
 
 h1=histogram(pbpDLow, min=4)
-p1=barplot(dindgen(n_elements(h1),start=0,increment=1),h1)
+p1=barplot(dindgen(n_elements(h1),start=4,increment=1),h1)
 stop
 
 

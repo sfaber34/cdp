@@ -82,7 +82,9 @@ for(i=1:length(total_conc))
 end    
 indicies = find(total_conc > threshold_low & total_conc < threshold_high);
 figure
-histogram = sum(ADC_sorted(indicies,:),1); 
+
+histogram = sum(ADC_sorted,1); 
+disp(histogram)
 stairs(CDP_bins, histogram);
 hold on;
 %plot([water_sizes(period_to_view) water_sizes(period_to_view)], [-1000 1000], 'k', 'LineWidth', 2);
