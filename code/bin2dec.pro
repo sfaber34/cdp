@@ -1,18 +1,20 @@
 pro bin2dec
 
 
-binDBounds=[0,2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
 binDLabels=[3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-binADCBounds=[83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
 
-;;--------------------------------------------------------------------MOD BINS--------------------------------------------------------------------
-;binDBounds=[0,2,3,4,5,6,7,8,9,11,13,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+;-------------------------------------------------------------------MOD BINS--------------------------------------------------------------------
+;binDBounds=[0,2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
 ;binDLabels=[3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-;binADCBounds=[83,105,173,219,265,307,353,367,428,502,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+;binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
 
 
 
-data=read_csv('data/cdpPbp050516.csv')
+;data=read_csv('data/cdpPbp050516.csv')
+data=read_csv('data/CDP_20160519_203922D.csv')
+
 
 nRows = n_elements(data.(0))
 
@@ -32,6 +34,19 @@ y=[]
 
 firstTime=data.(49)
 
+
+for i=0,254 do begin
+  x=data.(i+50)
+  pbp[i,*]=x
+endfor
+
+;ASSIGN BIN COUNTS
+for i=0,29 do begin
+  k=data.(i+19)
+  binCounts[i,*]=k
+endfor
+
+
 for u=0,nRows-1 do begin
   step=fix((float(u))/nRows*100.)
   if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 1->'),string(step)
@@ -39,10 +54,7 @@ for u=0,nRows-1 do begin
   date[u]=data.field001[0]
   
   ;ASSIGN PBP
-  for i=0,254 do begin
-    x=data.(i+50)
-    pbp[i,u]=x[u]
-  endfor
+  
   
   
   pbpArr=[]
@@ -91,27 +103,47 @@ for j=0,n_elements(pbpACD[0,*])-1 do begin
   step=fix((float(j))/(n_elements(pbpACD[0,*])-1)*100.)
   if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 2->'),string(step)
   for i=0,n_elements(pbpACD[*,0])-1 do begin
-    if pbpACD[i,j] gt 0. then begin      
-      for e=0,n_elements(pbpACD)-1 do begin
-        if e lt 27 then begin
-          if binADCBounds[e] gt pbpACD[i,j] then begin
-            pbpBin[i,j]=e+1
-            pbpDLow[i,j]=binDBounds[e]
-            pbpDUp[i,j]=binDBounds[e+1]
-            break
+    if pbpACD[i,j] gt binADCBounds[0] then begin   
+      ;t=0   
+      ;for e=0,n_elements(pbpACD)-1 do begin
+        ;if t lt n_elements(binDBounds)-1d then begin
+          x=where(pbpACD[i,j] lt binADCBounds)
+          x=x[0]
+          if x eq -1 and pbpACD[i,j] gt binADCBounds[0] then begin
+            pbpBin[i,j]=!VALUES.F_NAN
+            pbpDLow[i,j]=!VALUES.F_NAN
+            pbpDUp[i,j]=!VALUES.F_NAN
           endif else begin
-            if e eq 27 then begin
-              pbpBin[i,j]=e
-              pbpDLow[i,j]=48
-              pbpDUp[i,j]=50
-              break
-            endif
+            pbpBin[i,j]=x
+            pbpDLow[i,j]=binDBounds[x-1]
+            pbpDUp[i,j]=binDBounds[x]
           endelse
-        endif
-      endfor
-    endif else begin
-      break
-    endelse
+          
+          
+;          if pbpDUp[i,j] gt 49 then begin
+;            stop
+;          endif
+;          if binADCBounds[t] gt pbpACD[i,j] and t ne 0 then begin
+;            pbpBin[i,j]=t
+;            pbpDLow[i,j]=binDBounds[t-1]
+;            pbpDUp[i,j]=binDBounds[t]          
+;            break
+;          endif
+;          if binADCBounds[t] gt pbpACD[i,j] and t eq 0 then begin
+;            pbpBin[i,j]=!VALUES.F_NAN
+;            pbpDLow[i,j]=!VALUES.F_NAN
+;            pbpDUp[i,j]=!VALUES.F_NAN
+;            break
+;          endif
+;          if 0 eq 1 then begin
+;            pbpBin[i,j]=!VALUES.F_NAN
+;            pbpDLow[i,j]=!VALUES.F_NAN
+;            pbpDUp[i,j]=!VALUES.F_NAN
+;          endif
+          ;t++
+        ;endif
+      ;endfor
+    endif
   endfor
 endfor
 
@@ -126,8 +158,8 @@ pbpACD=pbpACD[where(pbpACD gt .000000001)]
 ;p1=scatterplot(pbpTime,pbpACD)
 ;p1.yrange=[1700,2150]
 
-h1=histogram(pbpDLow, min=4)
-p1=barplot(dindgen(n_elements(h1),start=4,increment=1),h1)
+h1=histogram(pbpDLow, min=2)
+p1=barplot(dindgen(n_elements(h1),start=2,increment=1),h1)
 stop
 
 
