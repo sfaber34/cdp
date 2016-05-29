@@ -17,6 +17,8 @@ for(i=1:7)
         case 7
             filename = '50um_10Hz.csv';
     end        
+    
+    filename = '/Users/spencerfaber/research/cdp/code/data/cdpPbp050516.csv'
 
     data = csvread(filename, 1, 19);
 

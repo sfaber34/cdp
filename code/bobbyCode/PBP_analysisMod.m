@@ -1,8 +1,9 @@
 clear
 file = '/Users/spencerfaber/research/cdp/code/data/CDP_20160519_203922F.csv'
-period_to_view = 7;
+period_to_view = 1;
 data = csvread(file, 0, 19);
 s = size(data);
+
 time_strings = textread(file, '%s', 'whitespace', ',');
 glass_bead_sizes = [8 10 15 20 30 40 50];
 water_sizes = [6.2 7.5 14 15.75 25.25 35 39.5];
@@ -68,7 +69,7 @@ for(i=1:s(1))
     indicies = find(time_hhmmss == time_hhmmss1(i))
     ADC_sorted(i,:) = histc(ADC(indicies), bin_thresholds);
 end
-
+disp(ADC)
 threshold_low = 0;
 threshold_high = 20;
 total_bin = sum(CDP_conc,2);
@@ -81,23 +82,25 @@ for(i=1:length(total_conc))
 end    
 indicies = find(total_conc > threshold_low & total_conc < threshold_high);
 figure
-histogram = sum(ADC_sorted(indicies,:),1); 
+
+histogram = sum(ADC_sorted,1); 
+disp(histogram)
 stairs(CDP_bins, histogram);
 hold on;
-plot([water_sizes(period_to_view) water_sizes(period_to_view)], [-1000 1000], 'k', 'LineWidth', 2);
-plot([water_std_mins(period_to_view) water_std_mins(period_to_view)], [-1000 1000], 'k--', 'LineWidth', 2);
-plot([water_std_maxs(period_to_view) water_std_maxs(period_to_view)], [-1000 1000], 'k--', 'LineWidth', 2);
+%plot([water_sizes(period_to_view) water_sizes(period_to_view)], [-1000 1000], 'k', 'LineWidth', 2);
+%plot([water_std_mins(period_to_view) water_std_mins(period_to_view)], [-1000 1000], 'k--', 'LineWidth', 2);
+%plot([water_std_maxs(period_to_view) water_std_maxs(period_to_view)], [-1000 1000], 'k--', 'LineWidth', 2);
 ylim([0 max(histogram)*1.1]);
 set(gca, 'FontWeight', 'bold', 'FontSize', 15);
 xlabel('D [\mum]');
 ylabel('#');
-title([num2str(threshold_low) ' < counts < ' num2str(threshold_high)]);
-figure
+%title([num2str(threshold_low) ' < counts < ' num2str(threshold_high)]);
+%figure
 
-plot(timevec, total_conc),
-datetick('x', 'HHMMSS');
-xlabel('Time [UTC]');
-ylabel('Total #');
+%plot(timevec, total_conc),
+%datetick('x', 'HHMMSS');
+%xlabel('Time [UTC]');
+%ylabel('Total #');
 
 figure
 scatter(part_time_s, ADC(1:end-1), 49, 'r', 'filled');
