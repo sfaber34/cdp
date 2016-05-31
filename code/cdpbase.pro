@@ -1,7 +1,7 @@
 pro cdpBase
 
-  ;data=read_csv('data/CDP_20160519_203922F.csv')
-  data=read_csv('data/CDP_20160512_173403.csv')
+  data=read_csv('data/CDP_20160519_203922F.csv')
+  ;data=read_csv('data/CDP_20160512_173403.csv')
 
 
   nRows = n_elements(data.(0))
@@ -13,8 +13,8 @@ pro cdpBase
   pbpDUp=make_array(255,nRows)
   pbpBin=make_array(255,nRows)
   pbpTime=make_array(255,nRows)
-  binCounts=make_array(30,nRows)
-  binBoundUp=make_array(49,nRows)
+  binCounts=make_array(27,nRows)
+  binSizeUp=make_array(49,nRows)
   date=[]
   hour=[]
   min=[]
@@ -25,8 +25,13 @@ pro cdpBase
   dofReject=[]
   binCountsSecSum=[]
   
-  binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-  binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+;  original bins
+;  binDBoundsB=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+;  binADCBoundsB=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  
+  
+  binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+  binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
 
 
   firstTime=data.(49)
@@ -41,60 +46,73 @@ pro cdpBase
   endfor
 
   ;ASSIGN BIN COUNTS
-  for i=0,29 do begin
-    k=data.(i+19)
-    binCounts[i,*]=k
+  for i=0,5 do begin
+    binCounts[i,*]=data.(i+19)
+  endfor
+  binCounts[6,*]=data.(25)+data.(26)
+  binCounts[7,*]=data.(27)+data.(28)
+  binCounts[8,*]=data.(29)+data.(30)
+  for i=9,26 do begin
+    binCounts[i,*]=data.(i+22)
   endfor
 
-  for i=0,11 do begin
-    binBoundUp[i,*]=binCounts[i,*]
+  for i=0,5 do begin
+    binSizeUp[i,*]=binCounts[i,*]
   endfor
 
-  binBoundUp[12,*]=binCounts[12,*]
-  binBoundUp[13,*]=binCounts[12,*]
-  binBoundUp[14,*]=binCounts[13,*]
-  binBoundUp[15,*]=binCounts[13,*]
-  binBoundUp[16,*]=binCounts[14,*]
-  binBoundUp[17,*]=binCounts[14,*]
-  binBoundUp[18,*]=binCounts[15,*]
-  binBoundUp[19,*]=binCounts[15,*]
-  binBoundUp[20,*]=binCounts[16,*]
-  binBoundUp[21,*]=binCounts[16,*]
-  binBoundUp[22,*]=binCounts[17,*]
-  binBoundUp[23,*]=binCounts[17,*]
-  binBoundUp[24,*]=binCounts[18,*]
-  binBoundUp[25,*]=binCounts[18,*]
-  binBoundUp[26,*]=binCounts[19,*]
-  binBoundUp[27,*]=binCounts[19,*]
-  binBoundUp[28,*]=binCounts[20,*]
-  binBoundUp[29,*]=binCounts[20,*]
-  binBoundUp[30,*]=binCounts[21,*]
-  binBoundUp[31,*]=binCounts[21,*]
-  binBoundUp[32,*]=binCounts[22,*]
-  binBoundUp[33,*]=binCounts[22,*]
-  binBoundUp[34,*]=binCounts[23,*]
-  binBoundUp[35,*]=binCounts[23,*]
-  binBoundUp[36,*]=binCounts[24,*]
-  binBoundUp[37,*]=binCounts[24,*]
-  binBoundUp[38,*]=binCounts[25,*]
-  binBoundUp[39,*]=binCounts[25,*]
-  binBoundUp[40,*]=binCounts[26,*]
-  binBoundUp[41,*]=binCounts[26,*]
-  binBoundUp[42,*]=binCounts[27,*]
-  binBoundUp[43,*]=binCounts[27,*]
-  binBoundUp[44,*]=binCounts[28,*]
-  binBoundUp[45,*]=binCounts[28,*]
-  binBoundUp[46,*]=binCounts[29,*]
-  binBoundUp[47,*]=binCounts[29,*]
+  binSizeUp[6,*]=binCounts[6,*]
+  binSizeUp[7,*]=binCounts[6,*]
+  binSizeUp[8,*]=binCounts[7,*]
+  binSizeUp[9,*]=binCounts[7,*]
+  binSizeUp[10,*]=binCounts[8,*]
+  binSizeUp[11,*]=binCounts[8,*]
+  binSizeUp[12,*]=binCounts[9,*]
+  binSizeUp[13,*]=binCounts[9,*]
+  binSizeUp[14,*]=binCounts[10,*]
+  binSizeUp[15,*]=binCounts[10,*]
+  binSizeUp[16,*]=binCounts[11,*]
+  binSizeUp[17,*]=binCounts[11,*]
+  binSizeUp[18,*]=binCounts[12,*]
+  binSizeUp[19,*]=binCounts[12,*]
+  binSizeUp[20,*]=binCounts[13,*]
+  binSizeUp[21,*]=binCounts[13,*]
+  binSizeUp[22,*]=binCounts[14,*]
+  binSizeUp[23,*]=binCounts[14,*]
+  binSizeUp[24,*]=binCounts[15,*]
+  binSizeUp[25,*]=binCounts[15,*]
+  binSizeUp[26,*]=binCounts[16,*]
+  binSizeUp[27,*]=binCounts[16,*]
+  binSizeUp[28,*]=binCounts[17,*]
+  binSizeUp[29,*]=binCounts[17,*]
+  binSizeUp[30,*]=binCounts[18,*]
+  binSizeUp[31,*]=binCounts[18,*]
+  binSizeUp[32,*]=binCounts[19,*]
+  binSizeUp[33,*]=binCounts[19,*]
+  binSizeUp[34,*]=binCounts[20,*]
+  binSizeUp[35,*]=binCounts[20,*]
+  binSizeUp[36,*]=binCounts[21,*]
+  binSizeUp[37,*]=binCounts[21,*]
+  binSizeUp[38,*]=binCounts[22,*]
+  binSizeUp[39,*]=binCounts[22,*]
+  binSizeUp[40,*]=binCounts[23,*]
+  binSizeUp[41,*]=binCounts[23,*]
+  binSizeUp[42,*]=binCounts[24,*]
+  binSizeUp[43,*]=binCounts[24,*]
+  binSizeUp[44,*]=binCounts[25,*]
+  binSizeUp[45,*]=binCounts[25,*]
+  binSizeUp[46,*]=binCounts[26,*]
+  binSizeUp[47,*]=binCounts[26,*]
 
-  binCountsBinSum=dindgen(30,start=0,increment=0)
-  for i=0,29 do begin
-    binCountsBinSum[i]=total(binCounts[i,*])
+  
+
+  binCountsSum=dindgen(27,start=0,increment=0)
+  for i=0,26 do begin
+    binCountsSum[i]=total(binCounts[i,*])
   endfor
 
-  binBoundUpSum=dindgen(48,start=0,increment=0)
+  binSizeUpSum=dindgen(48,start=0,increment=0)
   for i=0,47 do begin
-    binBoundUpSum[i]=total(binBoundUp[i,*])
+    binSizeUpSum[i]=total(binSizeUp[i,*])
   endfor
 
 
@@ -147,7 +165,7 @@ pro cdpBase
 
 
       if calcTime then begin
-        pbpTime[i,u]=(total(toDecTime)+firstTime[u])/1d6+u
+        pbpTime[i,u]=(total(toDecTime)+firstTime[u])/1d6+i
       endif else begin
         pbpTime[i,u]=!VALUES.F_NAN
       endelse
@@ -177,8 +195,10 @@ pro cdpBase
       endif
     endfor
   endfor
+  
+  
 
-  save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsBinSum,binBoundUp,binBoundUpSum,rejectADC,aveTransReject,dofReject,$
-    runtime, binCountsSecSum
+  save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsSum,binSizeUp,binSizeUpSum,rejectADC,aveTransReject,dofReject,$
+    runtime,binCountsSecSum
 
 end
