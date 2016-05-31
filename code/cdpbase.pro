@@ -1,15 +1,11 @@
 pro cdpBase
 
-
-  
-
-
+  ;data=read_csv('data/CDP_20160519_203922F.csv')
   data=read_csv('data/CDP_20160512_173403.csv')
 
 
   nRows = n_elements(data.(0))
-
-  time = make_array(nRows)
+  runTime = dindgen(nRows, start=0, increment=1)
   pbp=make_array(255,nRows,/long)
   val=make_array(255,nRows)
   pbpACD=make_array(255,nRows)
@@ -24,19 +20,19 @@ pro cdpBase
   min=[]
   sec=[]
   x=[]
-  y=[]
-  
-  
-  
+  rejectADC=[]
+  aveTransReject=[]
+  dofReject=[]
+  binCountsSecSum=[]
   
   binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-  binDLabels=[3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
   binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
 
 
-
-
   firstTime=data.(49)
+  rejectADCCol=data.(18)
+  aveTransRejectCol=data.(15)
+  dofRejectCol=data.(12)
 
 
   for i=0,254 do begin
@@ -91,9 +87,9 @@ pro cdpBase
   binBoundUp[46,*]=binCounts[29,*]
   binBoundUp[47,*]=binCounts[29,*]
 
-  binCountsSum=dindgen(30,start=0,increment=0)
+  binCountsBinSum=dindgen(30,start=0,increment=0)
   for i=0,29 do begin
-    binCountsSum[i]=total(binCounts[i,*])
+    binCountsBinSum[i]=total(binCounts[i,*])
   endfor
 
   binBoundUpSum=dindgen(48,start=0,increment=0)
@@ -101,11 +97,8 @@ pro cdpBase
     binBoundUpSum[i]=total(binBoundUp[i,*])
   endfor
 
-  ;p1=barplot(dindgen(30,start=0,increment=1),binCountsSum,histogram=1)
-  ;p2=barplot(dindgen(48,start=2,increment=1),binBoundUpSum,histogram=1)
 
-
-  for u=0,nRows-1 do begin
+  for u=1,nRows-1 do begin
     step=fix((float(u))/nRows*100.)
     if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 1->'),string(step)
 
@@ -117,6 +110,11 @@ pro cdpBase
     secX=strsplit(data.field002[u],':',/extract)
     secXB=strsplit(secX[2],'.',/extract)
     sec=[sec,secXB[0]]
+    rejectADC=[rejectADC,rejectADCCol[u]]
+    aveTransReject=[aveTransReject,aveTransRejectCol[u]]
+    dofReject=[dofReject,dofRejectCol[u]]
+    binCountsSecSum=[binCountsSecSum,total(binCounts[*,u])]
+    
 
     pbpArr=[]
 
@@ -180,6 +178,7 @@ pro cdpBase
     endfor
   endfor
 
-  save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsSum,binBoundUp,binBoundUpSum
+  save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsBinSum,binBoundUp,binBoundUpSum,rejectADC,aveTransReject,dofReject,$
+    runtime, binCountsSecSum
 
 end
