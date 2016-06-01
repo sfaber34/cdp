@@ -1,18 +1,17 @@
 pro cdpBase
 
-  data=read_csv('data/CDP_20160519_203922F.csv')
-  ;data=read_csv('data/CDP_20160512_173403.csv')
+  ;data=read_csv('data/CDP_20160519_203922F.csv')
+  data=read_csv('data/CDP_20160519_203922.csv')
 
 
   nRows = n_elements(data.(0))
   runTime = dindgen(nRows, start=0, increment=1)
-  pbp=make_array(255,nRows,/long)
-  val=make_array(255,nRows)
-  pbpACD=make_array(255,nRows)
-  pbpDLow=make_array(255,nRows)
-  pbpDUp=make_array(255,nRows)
-  pbpBin=make_array(255,nRows)
-  pbpTime=make_array(255,nRows)
+  pbp=make_array(256,nRows,/long)
+  val=make_array(256,nRows)
+  pbpACD=make_array(256,nRows)
+  pbpD=make_array(256,nRows)
+  pbpBin=make_array(256,nRows)
+  pbpTime=make_array(256,nRows)
   binCounts=make_array(27,nRows)
   binSizeUp=make_array(49,nRows)
   date=[]
@@ -34,14 +33,15 @@ pro cdpBase
   binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
 
 
-  firstTime=data.(49)
+  ;firstTime=data.(49)
+  firstTime=0.
   rejectADCCol=data.(18)
   aveTransRejectCol=data.(15)
   dofRejectCol=data.(12)
 
-
-  for i=0,254 do begin
-    x=data.(i+50)
+  pbp[0,*]=data.(49)
+  for i=1,255 do begin
+    x=data.(i+49)
     pbp[i,*]=x
   endfor
 
@@ -116,7 +116,7 @@ pro cdpBase
   endfor
 
 
-  for u=1,nRows-1 do begin
+  for u=0,nRows-1 do begin
     step=fix((float(u))/nRows*100.)
     if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 1->'),string(step)
 
@@ -136,7 +136,7 @@ pro cdpBase
 
     pbpArr=[]
 
-    for i=0,254 do begin
+    for i=0,255 do begin
       toDecTime=[]
       toDecD=[]
       calcTime=0
@@ -165,7 +165,7 @@ pro cdpBase
 
 
       if calcTime then begin
-        pbpTime[i,u]=(total(toDecTime)+firstTime[u])/1d6+i
+        pbpTime[i,u]=(total(toDecTime)+firstTime)/1d6+i
       endif else begin
         pbpTime[i,u]=!VALUES.F_NAN
       endelse
@@ -180,25 +180,26 @@ pro cdpBase
     step=fix((float(j))/(n_elements(pbpACD[0,*])-1)*100.)
     if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 2->'),string(step)
     for i=0,n_elements(pbpACD[*,0])-1 do begin
-      if pbpACD[i,j] gt binADCBounds[0] then begin
+      if pbpACD[i,j] gt binADCBounds[0] and pbpACD[i,j] ne 4095. then begin
         x=where(pbpACD[i,j] lt binADCBounds)
         x=x[0]
         if x eq -1 and pbpACD[i,j] gt binADCBounds[0] then begin
           pbpBin[i,j]=!VALUES.F_NAN
-          pbpDLow[i,j]=!VALUES.F_NAN
-          pbpDUp[i,j]=!VALUES.F_NAN
+          pbpD[i,j]=!VALUES.F_NAN
         endif else begin
           pbpBin[i,j]=x
-          pbpDLow[i,j]=binDBounds[x-1]
-          pbpDUp[i,j]=binDBounds[x]
+          pbpD[i,j]=binDBounds[x]
         endelse
-      endif
+      endif else begin
+        pbpBin[i,j]=!VALUES.F_NAN
+        pbpD[i,j]=1.
+      endelse
     endfor
   endfor
   
   
 
   save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsSum,binSizeUp,binSizeUpSum,rejectADC,aveTransReject,dofReject,$
-    runtime,binCountsSecSum
+    runtime,binCountsSecSum,pbpD
 
 end
