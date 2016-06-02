@@ -1,6 +1,6 @@
 pro cdpBase
 
-  ;data=read_csv('data/CDP_20160519_203922F.csv')
+  data=read_csv('data/CDP_20160519_203922Snip.csv')
   data=read_csv('data/CDP_20160519_203922.csv')
 
 
@@ -15,8 +15,9 @@ pro cdpBase
   pbpBin[*,*]=!VALUES.F_NAN
   pbpTime=make_array(256,nRows)
   pbpTime[*,*]=!VALUES.F_NAN
-  binCounts=make_array(30,nRows)
+  binCounts=make_array(27,nRows)
   binSizeUp=make_array(49,nRows)
+  pbpSizeUp=make_array(49,nRows)
   binNX=dindgen(27,start=0,increment=1)
   binDX=dindgen(50,start=0,increment=1)
   date=[]
@@ -31,8 +32,10 @@ pro cdpBase
   pbpSecSum=[]
   
 ;  original bins
-  binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-  binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+
+  ;--use these---
+  ;binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+  ;binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
   
   ;binADCBounds=[30,91,111,159,190,215,243,254,272,301,355,382,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
   
@@ -40,8 +43,8 @@ pro cdpBase
   
   
   
-  ;binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-  ;binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+  binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
   
   ;binADCBounds=[30,91,111,159,190,215,243,272,355,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
 
@@ -56,21 +59,21 @@ pro cdpBase
   endfor
 
   ;ASSIGN BIN COUNTS
-;  for i=0,5 do begin
-;    binCounts[i,*]=data.(i+19)
-;  endfor
-;  binCounts[6,*]=data.(25)+data.(26)
-;  binCounts[7,*]=data.(27)+data.(28)
-;  binCounts[8,*]=data.(29)+data.(30)
-;  for i=9,26 do begin
-;    binCounts[i,*]=data.(i+22)
-;  endfor
-  
-  
-  
-  for i=0,29 do begin
+  for i=0,5 do begin
     binCounts[i,*]=data.(i+19)
   endfor
+  binCounts[6,*]=data.(25)+data.(26)
+  binCounts[7,*]=data.(27)+data.(28)
+  binCounts[8,*]=data.(29)+data.(30)
+  for i=9,26 do begin
+    binCounts[i,*]=data.(i+22)
+  endfor
+  
+  
+  
+;  for i=0,29 do begin
+;    binCounts[i,*]=data.(i+19)
+;  endfor
   
   
   
@@ -124,8 +127,8 @@ pro cdpBase
 
   
 
-  binCountsSum=dindgen(30,start=0,increment=0)
-  for i=0,29 do begin
+  binCountsSum=dindgen(27,start=0,increment=0)
+  for i=0,26 do begin
     binCountsSum[i]=total(binCounts[i,*])
   endfor
 
@@ -210,6 +213,7 @@ pro cdpBase
     pbpSecSum=[pbpSecSum,max(where(pbpBin[*,u] gt 0.1))+1.]
     
   endfor
+
 
 
 
