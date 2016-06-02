@@ -9,52 +9,71 @@ pro cdpBase
   pbp=make_array(256,nRows,/long)
   val=make_array(256,nRows)
   pbpACD=make_array(256,nRows)
+  pbpACD[*,*]=!VALUES.F_NAN
   pbpD=make_array(256,nRows)
   pbpBin=make_array(256,nRows)
+  pbpBin[*,*]=!VALUES.F_NAN
   pbpTime=make_array(256,nRows)
-  binCounts=make_array(27,nRows)
+  pbpTime[*,*]=!VALUES.F_NAN
+  binCounts=make_array(30,nRows)
   binSizeUp=make_array(49,nRows)
+  binNX=dindgen(27,start=0,increment=1)
+  binDX=dindgen(50,start=0,increment=1)
   date=[]
   hour=[]
   min=[]
   sec=[]
   x=[]
-  rejectADC=[]
+  adcReject=[]
   aveTransReject=[]
   dofReject=[]
-  binCountsSecSum=[]
+  binsecsum=[]
+  pbpSecSum=[]
   
 ;  original bins
-;  binDBoundsB=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-;  binADCBoundsB=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+  binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  
+  ;binADCBounds=[30,91,111,159,190,215,243,254,272,301,355,382,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
+  
+  ;binADCBounds=[30,64,89,115,147,168,188,220,262,308,356,407,461,583,707,829,983,1148,1324,1512,1697,1909,2131,2365,2610,2864,3097,3337,3583,3879,4096]
   
   
-  binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-  binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  
+  ;binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+  ;binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  
+  ;binADCBounds=[30,91,111,159,190,215,243,272,355,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
 
-
-  ;firstTime=data.(49)
-  firstTime=0.
-  rejectADCCol=data.(18)
+  adcRejectCol=data.(18)
   aveTransRejectCol=data.(15)
   dofRejectCol=data.(12)
 
   pbp[0,*]=data.(49)
-  for i=1,255 do begin
+  for i=0,255 do begin
     x=data.(i+49)
     pbp[i,*]=x
   endfor
 
   ;ASSIGN BIN COUNTS
-  for i=0,5 do begin
+;  for i=0,5 do begin
+;    binCounts[i,*]=data.(i+19)
+;  endfor
+;  binCounts[6,*]=data.(25)+data.(26)
+;  binCounts[7,*]=data.(27)+data.(28)
+;  binCounts[8,*]=data.(29)+data.(30)
+;  for i=9,26 do begin
+;    binCounts[i,*]=data.(i+22)
+;  endfor
+  
+  
+  
+  for i=0,29 do begin
     binCounts[i,*]=data.(i+19)
   endfor
-  binCounts[6,*]=data.(25)+data.(26)
-  binCounts[7,*]=data.(27)+data.(28)
-  binCounts[8,*]=data.(29)+data.(30)
-  for i=9,26 do begin
-    binCounts[i,*]=data.(i+22)
-  endfor
+  
+  
+  
 
   for i=0,5 do begin
     binSizeUp[i,*]=binCounts[i,*]
@@ -105,8 +124,8 @@ pro cdpBase
 
   
 
-  binCountsSum=dindgen(27,start=0,increment=0)
-  for i=0,26 do begin
+  binCountsSum=dindgen(30,start=0,increment=0)
+  for i=0,29 do begin
     binCountsSum[i]=total(binCounts[i,*])
   endfor
 
@@ -114,24 +133,33 @@ pro cdpBase
   for i=0,47 do begin
     binSizeUpSum[i]=total(binSizeUp[i,*])
   endfor
+  
+  if dofRejectCol[0] gt 1024 then begin
+    startRow=1
+  endif else begin
+    startRow=0
+  endelse
 
-
-  for u=0,nRows-1 do begin
+  for u=startRow,nRows-1 do begin
     step=fix((float(u))/nRows*100.)
     if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 1->'),string(step)
 
     date=[date,data.field001[u]]
+    
     hourX=strsplit(data.field002[u],':',/extract)
     hour=[hour,hourX[0]]
+    
     minX=strsplit(data.field002[u],':',/extract)
     min=[min,minX[1]]
+    
     secX=strsplit(data.field002[u],':',/extract)
     secXB=strsplit(secX[2],'.',/extract)
     sec=[sec,secXB[0]]
-    rejectADC=[rejectADC,rejectADCCol[u]]
+    
+    adcReject=[adcReject,adcRejectCol[u]]
     aveTransReject=[aveTransReject,aveTransRejectCol[u]]
     dofReject=[dofReject,dofRejectCol[u]]
-    binCountsSecSum=[binCountsSecSum,total(binCounts[*,u])]
+    binsecsum=[binsecsum,total(binCounts[*,u])]
     
 
     pbpArr=[]
@@ -141,16 +169,15 @@ pro cdpBase
       toDecD=[]
       calcTime=0
 
-
       val=binary(pbp[i,u])
-
 
       valTime=reverse(val[0:19])
       valD=reverse(val[20:31])
+      
+      if total(long(valD)) eq 0 then break
 
       for j=0,19 do begin
         toDecTime=[toDecTime,valTime[j]*2.^j]
-        if toDecTime[j] gt 0.000001 then calcTime=1
       endfor
 
       for j=0,11 do begin
@@ -159,47 +186,34 @@ pro cdpBase
 
       if total(toDecD) gt .000001 then begin
         pbpACD[i,u]=total(toDecD)
-      endif else begin
-        pbpACD[i,u]=!VALUES.F_NAN
-      endelse
-
-
-      if calcTime then begin
-        pbpTime[i,u]=(total(toDecTime)+firstTime)/1d6+i
-      endif else begin
-        pbpTime[i,u]=!VALUES.F_NAN
-      endelse
+      endif
 
     endfor
   endfor
 
 
 
-
-  for j=0,n_elements(pbpACD[0,*])-1 do begin
-    step=fix((float(j))/(n_elements(pbpACD[0,*])-1)*100.)
+  for u=startRow,n_elements(pbpACD[0,*])-1 do begin
+    
+    step=fix((float(u))/(n_elements(pbpACD[0,*])-1)*100.)
     if step mod 10 eq 0 and step ne 0 then print, strcompress('loop 2->'),string(step)
+    
     for i=0,n_elements(pbpACD[*,0])-1 do begin
-      if pbpACD[i,j] gt binADCBounds[0] and pbpACD[i,j] ne 4095. then begin
-        x=where(pbpACD[i,j] lt binADCBounds)
+      if pbpACD[i,u] gt binADCBounds[0] then begin
+        x=where(pbpACD[i,u] le binADCBounds)
         x=x[0]
-        if x eq -1 and pbpACD[i,j] gt binADCBounds[0] then begin
-          pbpBin[i,j]=!VALUES.F_NAN
-          pbpD[i,j]=!VALUES.F_NAN
-        endif else begin
-          pbpBin[i,j]=x
-          pbpD[i,j]=binDBounds[x]
-        endelse
-      endif else begin
-        pbpBin[i,j]=!VALUES.F_NAN
-        pbpD[i,j]=1.
-      endelse
+        pbpBin[i,u]=x
+        pbpD[i,u]=binDBounds[x]
+      endif
     endfor
+    
+    pbpSecSum=[pbpSecSum,max(where(pbpBin[*,u] gt 0.1))+1.]
+    
   endfor
-  
-  
 
-  save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsSum,binSizeUp,binSizeUpSum,rejectADC,aveTransReject,dofReject,$
-    runtime,binCountsSecSum,pbpD
+
+
+  save,filename='cdpdata.sav',date,hour,min,sec,binCounts,binCountsSum,binSizeUp,binSizeUpSum,adcReject,aveTransReject,dofReject,$
+    runtime,binsecsum,pbpD,pbpBin,binNX,binDX,pbpSecSum,/verbose
 
 end

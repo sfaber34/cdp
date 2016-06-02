@@ -1,11 +1,12 @@
 pro cdptestB
   restore,'cdpdata.sav'
+  cgcleanup
 
-;  p1=plot(runtime,aveTransReject,dimensions=[1600,1200])
-;  p2=plot(runtime,dofReject,/overplot,'r')
-;  p3=plot(runtime,binCountsSecSum,/overplot,'b')
+
+  h1=histogram(pbpbin[*,*],min=1,max=30,nbins=30)
   
+  p1=barplot(dindgen(30,start=0,increment=1),h1,histogram=0,dimensions=[1600,1200],nbars=2,index=1,fill_color='red')
+  p1=barplot(dindgen(30,start=0,increment=1),binCountsSum,histogram=0,nbars=2,index=0,/overplot)
 
-  p1=barplot(dindgen(27,start=0,increment=1),binCountsSum,histogram=1,dimensions=[1600,1200])
-  p2=barplot(dindgen(48,start=2,increment=1),binSizeUpSum,histogram=1)
+
 end
