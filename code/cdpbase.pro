@@ -1,4 +1,4 @@
-pro cdpBase
+pro cdpBase,t1,t2
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;
@@ -12,25 +12,41 @@ pro cdpBase
   
   ;data=read_csv('data/CDP_20160519_203922Snip.csv')
   data=read_csv('data/CDP_20160519_203922.csv')
+  
+  nRows = n_elements(data.(0))
+  
+  if t1 ne 0 and t2 ne 0 then begin
+    rowCount=abs(t2-t1)
+    for i=0, n_tags(data)-1 do begin
+      var=data.(i)
+      var=var[t1:t2]
+      data.(i)=!VALUES.F_NAN
+      data.(i)=var
+    endfor    
+    savename='cdpdatafilter.sav'
+  endif else begin
+    savename='cdpdata.sav'
+    rowCount=nRows
+  endelse
 
   test=data.(305)
   if test[0] gt 0. then headerTest=0 else headerTest=1
   
-  nRows = n_elements(data.(0))
-  runTime = dindgen(nRows, start=0, increment=1)
-  pbp=make_array(256,nRows,/long)
-  val=make_array(256,nRows)
-  pbpACD=make_array(256,nRows)
+  
+  runTime = dindgen(rowCount, start=0, increment=1)
+  pbp=make_array(256,rowCount,/long)
+  val=make_array(256,rowCount)
+  pbpACD=make_array(256,rowCount)
   pbpACD[*,*]=!VALUES.F_NAN
-  pbpD=make_array(256,nRows)
+  pbpD=make_array(256,rowCount)
   pbpD[*,*]=!VALUES.F_NAN
-  pbpBin=make_array(256,nRows)
+  pbpBin=make_array(256,rowCount)
   pbpBin[*,*]=!VALUES.F_NAN
-  pbpTime=make_array(256,nRows)
+  pbpTime=make_array(256,rowCount)
   pbpTime[*,*]=!VALUES.F_NAN
-  binD=make_array(27,nRows)
-  binDEx=make_array(48,nRows)
-  pbpDEx=make_array(48,nRows)
+  binD=make_array(27,rowCount)
+  binDEx=make_array(48,rowCount)
+  pbpDEx=make_array(48,rowCount)
   xBin=dindgen(27,start=0,increment=1)
   xBinEx=dindgen(48,start=3,increment=1)
   binDSum=dindgen(27,start=0,increment=0)
@@ -104,8 +120,8 @@ pro cdpBase
   endfor
   
   lastStep=0
-  for u=0,nRows-1 do begin
-    step=fix((float(u))/nRows*100.)
+  for u=0,rowCount-1 do begin
+    step=fix((float(u))/rowCount*100.)
     if step mod 10 eq 0 and step ne lastStep then begin
       print, strcompress('loop 1->'),strcompress(string(step)+'%')
       lastStep=step
@@ -164,7 +180,7 @@ pro cdpBase
   lastStep=0
   for u=0,n_elements(pbpACD[0,*])-1 do begin
     
-    step=fix((float(u))/nRows*100.)
+    step=fix((float(u))/rowCount*100.)
     if step mod 10 eq 0 and step ne lastStep then begin
       print, strcompress('loop 2->'),strcompress(string(step)+'%')
       lastStep=step
@@ -225,32 +241,31 @@ pro cdpBase
 
   ;-----------------------REMOVE INITIALIZATION COLUMN-----------------------
   if headerTest eq 1 then begin  
-    runTime=runTime[0:nRows-2]
-    date=date[1:nRows-1]
-    hour=hour[1:nRows-1]
-    min=min[1:nRows-1]
-    sec=sec[1:nRows-1]
+    runTime=runTime[0:rowCount-2]
+    date=date[1:rowCount-1]
+    hour=hour[1:rowCount-1]
+    min=min[1:rowCount-1]
+    sec=sec[1:rowCount-1]
 
-    binD=binD[*,1:nRows-1]
-    binDEx=binDEx[*,1:nRows-1]
-    binSecSum=binSecSum[1:nRows-1]
+    binD=binD[*,1:rowCount-1]
+    binDEx=binDEx[*,1:rowCount-1]
+    binSecSum=binSecSum[1:rowCount-1]
 
-    pbp=pbp[*,1:nRows-1]
-    pbpACD=pbpACD[*,1:nRows-1]
-    pbpD=pbpD[*,1:nRows-1]
-    pbpBin=pbpBin[*,1:nRows-1]
-    pbpTime=pbpTime[*,1:nRows-1]
-    pbpDEx=pbpDEx[*,1:nRows-1]
-    pbpSecSum=pbpSecSum[1:nRows-1]
+    pbp=pbp[*,1:rowCount-1]
+    pbpACD=pbpACD[*,1:rowCount-1]
+    pbpD=pbpD[*,1:rowCount-1]
+    pbpBin=pbpBin[*,1:rowCount-1]
+    pbpTime=pbpTime[*,1:rowCount-1]
+    pbpDEx=pbpDEx[*,1:rowCount-1]
+    pbpSecSum=pbpSecSum[1:rowCount-1]
 
-    adcReject=adcReject[1:nRows-1]
-    aveTransReject=aveTransReject[1:nRows-1]
-    dofReject=dofReject[1:nRows-1]
-    
+    adcReject=adcReject[1:rowCount-1]
+    aveTransReject=aveTransReject[1:rowCount-1]
+    dofReject=dofReject[1:rowCount-1]   
   endif  
 
 
-  save,filename='cdpdata.sav',date,hour,min,sec,binD,binDSum,binDEx,binDExSum,adcReject,aveTransReject,dofReject,$
+  save,filename=savename,date,hour,min,sec,binD,binDSum,binDEx,binDExSum,adcReject,aveTransReject,dofReject,$
     runtime,binsecsum,pbpD,pbpBin,xBin,xBinEx,pbpSecSum,pbpDEx,pbpDSum,pbpDExSum,pbpACD,pbpTime,/verbose
 
 end
