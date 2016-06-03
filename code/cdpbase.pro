@@ -1,5 +1,15 @@
 pro cdpBase
 
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+;
+;
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+  ;---------------------------------------------------------------------------------------------------------------------------------------------------
+  ;--------------------------------------------------------------VARIABLE/ARRAY CREATION--------------------------------------------------------------
+  ;---------------------------------------------------------------------------------------------------------------------------------------------------
+  
   ;data=read_csv('data/CDP_20160519_203922Snip.csv')
   data=read_csv('data/CDP_20160519_203922.csv')
 
@@ -21,9 +31,8 @@ pro cdpBase
   binD=make_array(27,nRows)
   binDEx=make_array(48,nRows)
   pbpDEx=make_array(48,nRows)
-  ;pbpD=make_array(49,nRows)
   xBin=dindgen(27,start=0,increment=1)
-  xBinEx=dindgen(50,start=0,increment=1)
+  xBinEx=dindgen(48,start=3,increment=1)
   binDSum=dindgen(27,start=0,increment=0)
   binDExSum=dindgen(48,start=0,increment=0)
   pbpDExSum=dindgen(48,start=0,increment=0)
@@ -38,53 +47,40 @@ pro cdpBase
   binsecsum=[]
   pbpSecSum=[]
   
-;  original bins
+  
 
-  ;--use these---
+  binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
+  binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+
+  ;-----ADDITIONAL THRESHOLD VALUES-----
+  ;binADCBounds=[30,91,111,159,190,215,243,272,355,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
   ;binDBounds=[2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
   ;binADCBounds=[30,83,105,173,219,265,307,353,367,407,428,445,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
-  
   ;binADCBounds=[30,91,111,159,190,215,243,254,272,301,355,382,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
-  
   ;binADCBounds=[30,64,89,115,147,168,188,220,262,308,356,407,461,583,707,829,983,1148,1324,1512,1697,1909,2131,2365,2610,2864,3097,3337,3583,3879,4096]
   
   
   
-  binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
-  binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
   
-  ;binADCBounds=[30,91,111,159,190,215,243,272,355,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
+  ;---------------------------------------------------------------------------------------------------------------------------------------------------
+  ;-------------------------------------------------------------------CALCULATIONS--------------------------------------------------------------------
+  ;---------------------------------------------------------------------------------------------------------------------------------------------------
 
-  adcRejectCol=data.(18)
-  aveTransRejectCol=data.(15)
-  dofRejectCol=data.(12)
 
-  pbp[0,*]=data.(49)
-  for i=0,255 do begin
-    x=data.(i+49)
-    pbp[i,*]=x
-  endfor
-
-  ;ASSIGN BIN COUNTS
+  ;-----------------------------------------ASSIGN BIN COUNTS (REBINNED)-----------------------------------------
   for i=0,5 do begin
     binD[i,*]=data.(i+19)
   endfor
+  
   binD[6,*]=data.(25)+data.(26)
   binD[7,*]=data.(27)+data.(28)
   binD[8,*]=data.(29)+data.(30)
+  
   for i=9,26 do begin
     binD[i,*]=data.(i+22)
   endfor
   
   
-  
-;  for i=0,29 do begin
-;    binD[i,*]=data.(i+19)
-;  endfor
-  
-  
-  
-
   for i=0,5 do begin
     binDEx[i,*]=binD[i,*]
   endfor
@@ -95,6 +91,17 @@ pro cdpBase
     if 2*(i/2) ne i then k++
   endfor
   
+  
+  ;-----------------------CALCULATE PBP SIZE/ARRIVAL TIME (REBINNED), TIME, REJECTED COUNTS-----------------------
+  adcRejectCol=data.(18)
+  aveTransRejectCol=data.(15)
+  dofRejectCol=data.(12)
+  
+  pbp[0,*]=data.(49)
+  for i=0,255 do begin
+    x=data.(i+49)
+    pbp[i,*]=x
+  endfor
   
   lastStep=0
   for u=0,nRows-1 do begin
@@ -121,9 +128,7 @@ pro cdpBase
     dofReject=[dofReject,dofRejectCol[u]]
     binsecsum=[binsecsum,total(binD[*,u])]
     
-
-    pbpArr=[]
-
+    ;---CONVERT RAW PBP TO SIZER RESPONSE/ARRIVAL TIME---
     for i=0,255 do begin
       toDecTime=[]
       toDecD=[]
@@ -151,7 +156,7 @@ pro cdpBase
     endfor
   endfor
 
-
+  ;---ASSIGN PBP SIZE VIA SIZER RESPONSE---
   lastStep=0
   for u=0,n_elements(pbpACD[0,*])-1 do begin
     
@@ -180,7 +185,7 @@ pro cdpBase
   endfor
   
   
-  
+  ;-----------------------SUM BIN/PBP COUNTS-----------------------
   for i=0,26 do begin
     binDSum[i]=total(binD[i,*])
   endfor
@@ -189,8 +194,7 @@ pro cdpBase
     binDExSum[i]=total(binDEx[i,*])
   endfor
   
-  
-  
+
   for i=0,5 do begin
     pbpDEx[i,*]=pbpD[i,*]
   endfor
@@ -214,7 +218,7 @@ pro cdpBase
     if 2*(i/2) ne i then k++
   endfor
 
-
+  ;-----------------------REMOVE INITIALIZATION COLUMN-----------------------
   if headerTest eq 1 then begin  
     runTime=runTime[0:nRows-2]
     date=date[1:nRows-1]
@@ -234,15 +238,11 @@ pro cdpBase
     pbpDEx=pbpDEx[*,1:nRows-1]
     pbpSecSum=pbpSecSum[1:nRows-1]
 
-
-    
     adcReject=adcReject[1:nRows-1]
     aveTransReject=aveTransReject[1:nRows-1]
     dofReject=dofReject[1:nRows-1]
     
-    
   endif  
-
 
 
   save,filename='cdpdata.sav',date,hour,min,sec,binD,binDSum,binDEx,binDExSum,adcReject,aveTransReject,dofReject,$
