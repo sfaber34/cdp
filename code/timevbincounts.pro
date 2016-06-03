@@ -1,5 +1,5 @@
 pro timeVbinCounts
-  restore,'cdpdata.sav'
+  restore,'cdpdatafilter.sav'
   cgcleanup
   
   g1=binD[0,*]+binD[1,*]+binD[2,*]+binD[3,*]+binD[4,*]+binD[5,*]+binD[6,*]+binD[7,*]+binD[8,*]

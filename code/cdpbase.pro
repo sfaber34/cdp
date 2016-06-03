@@ -1,4 +1,4 @@
-pro cdpBase,t1,t2
+pro cdpBase,filter=filter
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;
@@ -10,16 +10,26 @@ pro cdpBase,t1,t2
   ;--------------------------------------------------------------VARIABLE/ARRAY CREATION--------------------------------------------------------------
   ;---------------------------------------------------------------------------------------------------------------------------------------------------
   
+  
+  if n_elements(filter) gt 0 then doFilter=1 else doFilter=0
+  
   ;data=read_csv('data/CDP_20160519_203922Snip.csv')
   data=read_csv('data/CDP_20160519_203922.csv')
   
   nRows = n_elements(data.(0))
   
-  if t1 ne 0 and t2 ne 0 then begin
+  if doFilter eq 1 then begin
+    cgcleanup
+    
+    
+    times=timePlot()
+    t1=times.t1
+    t2=times.t2
+    
     rowCount=abs(t2-t1)
     for i=0, n_tags(data)-1 do begin
       var=data.(i)
-      var=var[t1:t2]
+      var=var[t1:t2-1]
       data.(i)=!VALUES.F_NAN
       data.(i)=var
     endfor    
@@ -84,16 +94,23 @@ pro cdpBase,t1,t2
 
 
   ;-----------------------------------------ASSIGN BIN COUNTS (REBINNED)-----------------------------------------
+  
+  
   for i=0,5 do begin
-    binD[i,*]=data.(i+19)
+    d1=data.(i+19)
+    binD[i,*]=d1[0:rowCount-1]
   endfor
   
-  binD[6,*]=data.(25)+data.(26)
-  binD[7,*]=data.(27)+data.(28)
-  binD[8,*]=data.(29)+data.(30)
+  d2=data.(25)+data.(26)
+  d3=data.(27)+data.(28)
+  d4=data.(29)+data.(30)
+  binD[6,*]=d2[0:rowCount-1]
+  binD[7,*]=d3[0:rowCount-1]
+  binD[8,*]=d4[0:rowCount-1]
   
   for i=9,26 do begin
-    binD[i,*]=data.(i+22)
+    d5=data.(i+22)
+    binD[i,*]=d5[0:rowCount-1]
   endfor
   
   
@@ -113,10 +130,11 @@ pro cdpBase,t1,t2
   aveTransRejectCol=data.(15)
   dofRejectCol=data.(12)
   
-  pbp[0,*]=data.(49)
+  d1=data.(49)
+  pbp[0,*]=d1[0:rowCount-1]
   for i=0,255 do begin
     x=data.(i+49)
-    pbp[i,*]=x
+    pbp[i,*]=x[0:rowCount-1]
   endfor
   
   lastStep=0
@@ -198,6 +216,10 @@ pro cdpBase,t1,t2
           pbpD[i,u]=!values.F_INFINITY
         endelse
       endif
+      if pbpACD[i,u] lt binADCBounds[0] and pbpACD[i,u] gt 0. then begin
+        pbpBin[i,u]=1
+        pbpD[i,u]=binDBounds[1]
+      endif
     endfor
     
     pbpSecSum=[pbpSecSum,max(where(pbpBin[*,u] gt 0.1))+1.]
@@ -267,5 +289,26 @@ pro cdpBase,t1,t2
 
   save,filename=savename,date,hour,min,sec,binD,binDSum,binDEx,binDExSum,adcReject,aveTransReject,dofReject,$
     runtime,binsecsum,pbpD,pbpBin,xBin,xBinEx,pbpSecSum,pbpDEx,pbpDSum,pbpDExSum,pbpACD,pbpTime,/verbose
+    
+  if doFilter eq 0 then begin
+    runTimeFilter=runTime
+    binSecSumFilter=binSecSum
+    
+    save,filename='filterdata.sav',runTimeFilter,binSecSumFilter
+  endif
 
+end
+
+
+function timePlot
+  restore,'filterdata.sav'
+  p1=plot(runTimeFilter,binSecSumFilter,dimensions=[1600,1200],margin=50,/device)
+  
+  stop
+  
+  t1=floor(p1.xrange[0])
+  t2=floor(p1.xrange[1])
+  p1.close
+  
+  return, {t1:t1,t2:t2}
 end
