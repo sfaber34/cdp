@@ -151,7 +151,11 @@ pro cdpBase
 
       if total(toDecD) gt .000001 then begin
         pbpACD[i,u]=total(toDecD)
-      endif      
+      endif     
+      
+      if total(toDecTime) gt .000001 then begin
+        pbpTime[i,u]=total(toDecTime)
+      endif 
 
     endfor
   endfor
@@ -217,6 +221,7 @@ pro cdpBase
     pbpDExSum[i]=pbpDSum[k]
     if 2*(i/2) ne i then k++
   endfor
+
 
   ;-----------------------REMOVE INITIALIZATION COLUMN-----------------------
   if headerTest eq 1 then begin  

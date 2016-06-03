@@ -1,10 +1,10 @@
-pro timeVBinCounts
+pro timeVbinCounts
   restore,'cdpdata.sav'
   cgcleanup
   
-  g1=bincounts[0,*]+bincounts[1,*]+bincounts[2,*]+bincounts[3,*]+bincounts[4,*]+bincounts[5,*]+bincounts[6,*]+bincounts[7,*]+bincounts[8,*]
-  g2=bincounts[9,*]+bincounts[10,*]+bincounts[11,*]+bincounts[12,*]+bincounts[13,*]+bincounts[14,*]+bincounts[15,*]+bincounts[16,*]+bincounts[17,*]
-  g3=bincounts[18,*]+bincounts[19,*]+bincounts[20,*]+bincounts[21,*]+bincounts[22,*]+bincounts[23,*]+bincounts[24,*]+bincounts[25,*]+bincounts[26,*]
+  g1=binD[0,*]+binD[1,*]+binD[2,*]+binD[3,*]+binD[4,*]+binD[5,*]+binD[6,*]+binD[7,*]+binD[8,*]
+  g2=binD[9,*]+binD[10,*]+binD[11,*]+binD[12,*]+binD[13,*]+binD[14,*]+binD[15,*]+binD[16,*]+binD[17,*]
+  g3=binD[18,*]+binD[19,*]+binD[20,*]+binD[21,*]+binD[22,*]+binD[23,*]+binD[24,*]+binD[25,*]+binD[26,*]
 
   p1=plot(runTime,g1,dimensions=[1600,1200],layout=[1,3,1],margin=[30,30,30,30],/device)
   p2=plot(runTime,g1+g2,'b',layout=[1,3,2],margin=[30,30,30,40],/device,/current)
