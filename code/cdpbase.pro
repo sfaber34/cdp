@@ -3,6 +3,40 @@ pro cdpBase,filter=filter
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;
 ;
+;
+;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------VARIABLE INFO----------------------------------------------------------------------------------------------------
+;
+;
+;----------PARTICLE VARIABLES----------
+;binN - Bin 1-30 counts [#/bin]
+;binNSum - Bin 1-30 counts summed over entire runtime [#]
+;binNSecSum - Bin 1-30 counts summed for each interval [#/s]
+;pbpN - bin segregated PBP counts [#/bin]
+;pbpBin - PBP particle bin number [int]
+;pbpD - PBP particle diameter [um]
+;pbpACD - PBP voltage signal [V]
+;pbpTime - PBP arival time [us]
+;
+;
+;----------DIAGNOSTIC VARIABLES----------
+;aveTrans - Average particle transit time (time qualifier signal shows qualified particles)  [us]
+;dofRejCol - Number of rejected out of depth of field particles [#]
+;adcOverflow - Number of oversize particles (sizer signal > max V) [#]
+;
+;
+;----------PLOTTING VARIABLES----------
+;date
+;hour
+;sec - Interval second
+;min - Interval minute
+;runtime - Second since file start (zero indexed)
+;xBin - Array for histogram plotting particles by bin
+;*****Variables with 'Ex' are 'non-Ex' variables shown above extrapolated for easier histogram plotting*****
+;
+;
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -20,7 +54,6 @@ pro cdpBase,filter=filter
   
   if doFilter eq 1 then begin
     cgcleanup
-    
     
     times=timePlot()
     t1=times.t1
@@ -48,30 +81,34 @@ pro cdpBase,filter=filter
   val=make_array(256,rowCount)
   pbpACD=make_array(256,rowCount)
   pbpACD[*,*]=!VALUES.F_NAN
+  pbpN=make_array(256,rowCount)
+  pbpN[*,*]=!VALUES.F_NAN
   pbpD=make_array(256,rowCount)
   pbpD[*,*]=!VALUES.F_NAN
+  pbpDEx=make_array(256,rowCount)
+  pbpDEx[*,*]=!VALUES.F_NAN
   pbpBin=make_array(256,rowCount)
   pbpBin[*,*]=!VALUES.F_NAN
   pbpTime=make_array(256,rowCount)
   pbpTime[*,*]=!VALUES.F_NAN
-  binD=make_array(27,rowCount)
-  binDEx=make_array(48,rowCount)
-  pbpDEx=make_array(48,rowCount)
+  binN=make_array(27,rowCount)
+  binNEx=make_array(48,rowCount)
+  pbpNEx=make_array(48,rowCount)
   xBin=dindgen(27,start=0,increment=1)
   xBinEx=dindgen(48,start=3,increment=1)
-  binDSum=dindgen(27,start=0,increment=0)
-  binDExSum=dindgen(48,start=0,increment=0)
-  pbpDExSum=dindgen(48,start=0,increment=0)
+  binNSum=dindgen(27,start=0,increment=0)
+  binNExSum=dindgen(48,start=0,increment=0)
+  pbpNExSum=dindgen(48,start=0,increment=0)
   date=[]
   hour=[]
   min=[]
   sec=[]
   x=[]
-  adcReject=[]
-  aveTransReject=[]
-  dofReject=[]
-  binsecsum=[]
-  pbpSecSum=[]
+  adcOverflow=[]
+  aveTrans=[]
+  dofRej=[]
+  binNSecSum=[]
+  pbpNSecSum=[]
   
   
 
@@ -98,37 +135,37 @@ pro cdpBase,filter=filter
   
   for i=0,5 do begin
     d1=data.(i+19)
-    binD[i,*]=d1[0:rowCount-1]
+    binN[i,*]=d1[0:rowCount-1]
   endfor
   
   d2=data.(25)+data.(26)
   d3=data.(27)+data.(28)
   d4=data.(29)+data.(30)
-  binD[6,*]=d2[0:rowCount-1]
-  binD[7,*]=d3[0:rowCount-1]
-  binD[8,*]=d4[0:rowCount-1]
+  binN[6,*]=d2[0:rowCount-1]
+  binN[7,*]=d3[0:rowCount-1]
+  binN[8,*]=d4[0:rowCount-1]
   
   for i=9,26 do begin
     d5=data.(i+22)
-    binD[i,*]=d5[0:rowCount-1]
+    binN[i,*]=d5[0:rowCount-1]
   endfor
   
   
   for i=0,5 do begin
-    binDEx[i,*]=binD[i,*]
+    binNEx[i,*]=binN[i,*]
   endfor
   
   k=6
   for i=6,47 do begin
-    binDEx[i,*]=binD[k,*]
+    binNEx[i,*]=binN[k,*]
     if 2*(i/2) ne i then k++
   endfor
   
   
   ;-----------------------CALCULATE PBP SIZE/ARRIVAL TIME (REBINNED), TIME, REJECTED COUNTS-----------------------
-  adcRejectCol=data.(18)
-  aveTransRejectCol=data.(15)
-  dofRejectCol=data.(12)
+  adcOverflowCol=data.(18)
+  aveTransCol=data.(15)
+  dofRejCol=data.(12)
   
   d1=data.(49)
   pbp[0,*]=d1[0:rowCount-1]
@@ -157,10 +194,10 @@ pro cdpBase,filter=filter
     secXB=strsplit(secX[2],'.',/extract)
     sec=[sec,secXB[0]]
     
-    adcReject=[adcReject,adcRejectCol[u]]
-    aveTransReject=[aveTransReject,aveTransRejectCol[u]]
-    dofReject=[dofReject,dofRejectCol[u]]
-    binsecsum=[binsecsum,total(binD[*,u])]
+    adcOverflow=[adcOverflow,adcOverflowCol[u]]
+    aveTrans=[aveTrans,aveTransCol[u]]
+    dofRej=[dofRej,dofRejCol[u]]
+    binNSecSum=[binNSecSum,total(binN[*,u])]
     
     ;---CONVERT RAW PBP TO SIZER RESPONSE/ARRIVAL TIME---
     for i=0,255 do begin
@@ -192,7 +229,10 @@ pro cdpBase,filter=filter
       endif 
 
     endfor
+      if pbpACD[0,u] gt .000001 then pbpTime[0,u]=0.
   endfor
+  
+  
 
   ;---ASSIGN PBP SIZE VIA SIZER RESPONSE---
   lastStep=0
@@ -222,18 +262,18 @@ pro cdpBase,filter=filter
       endif
     endfor
     
-    pbpSecSum=[pbpSecSum,max(where(pbpBin[*,u] gt 0.1))+1.]
+    pbpNSecSum=[pbpNSecSum,max(where(pbpBin[*,u] gt 0.1))+1.]
     
   endfor
   
   
   ;-----------------------SUM BIN/PBP COUNTS-----------------------
   for i=0,26 do begin
-    binDSum[i]=total(binD[i,*])
+    binNSum[i]=total(binN[i,*])
   endfor
   
   for i=0,47 do begin
-    binDExSum[i]=total(binDEx[i,*])
+    binNExSum[i]=total(binNEx[i,*])
   endfor
   
 
@@ -248,15 +288,15 @@ pro cdpBase,filter=filter
   endfor
 
 
-  pbpDSum=histogram(pbpBin,min=1,max=27)
+  pbpNSum=histogram(pbpBin,min=1,max=27)
 
   for i=0,5 do begin
-    pbpDExSum[i]=pbpDSum[i]
+    pbpNExSum[i]=pbpNSum[i]
   endfor
 
   k=6
   for i=6,47 do begin
-    pbpDExSum[i]=pbpDSum[k]
+    pbpNExSum[i]=pbpNSum[k]
     if 2*(i/2) ne i then k++
   endfor
 
@@ -269,32 +309,32 @@ pro cdpBase,filter=filter
     min=min[1:rowCount-1]
     sec=sec[1:rowCount-1]
 
-    binD=binD[*,1:rowCount-1]
-    binDEx=binDEx[*,1:rowCount-1]
-    binSecSum=binSecSum[1:rowCount-1]
+    binN=binN[*,1:rowCount-1]
+    binNEx=binNEx[*,1:rowCount-1]
+    binNSecSum=binNSecSum[1:rowCount-1]
 
     pbp=pbp[*,1:rowCount-1]
     pbpACD=pbpACD[*,1:rowCount-1]
-    pbpD=pbpD[*,1:rowCount-1]
+    pbpN=pbpN[*,1:rowCount-1]
     pbpBin=pbpBin[*,1:rowCount-1]
     pbpTime=pbpTime[*,1:rowCount-1]
-    pbpDEx=pbpDEx[*,1:rowCount-1]
-    pbpSecSum=pbpSecSum[1:rowCount-1]
+    pbpNEx=pbpNEx[*,1:rowCount-1]
+    pbpNSecSum=pbpNSecSum[1:rowCount-1]
 
-    adcReject=adcReject[1:rowCount-1]
-    aveTransReject=aveTransReject[1:rowCount-1]
-    dofReject=dofReject[1:rowCount-1]   
+    adcOverflow=adcOverflow[1:rowCount-1]
+    aveTrans=aveTrans[1:rowCount-1]
+    dofRej=dofRej[1:rowCount-1]   
   endif  
 
 
-  save,filename=savename,date,hour,min,sec,binD,binDSum,binDEx,binDExSum,adcReject,aveTransReject,dofReject,$
-    runtime,binsecsum,pbpD,pbpBin,xBin,xBinEx,pbpSecSum,pbpDEx,pbpDSum,pbpDExSum,pbpACD,pbpTime,/verbose
+  save,filename=savename,date,hour,min,sec,binN,binNSum,binNEx,binNExSum,adcOverflow,aveTrans,dofRej,$
+    runtime,binNSecSum,pbpN,pbpBin,xBin,xBinEx,pbpNSecSum,pbpNEx,pbpNSum,pbpNExSum,pbpACD,pbpTime,/verbose
     
   if doFilter eq 0 then begin
     runTimeFilter=runTime
-    binSecSumFilter=binSecSum
+    binNSecSumFilter=binNSecSum
     
-    save,filename='filterdata.sav',runTimeFilter,binSecSumFilter
+    save,filename='filterdata.sav',runTimeFilter,binNSecSumFilter
   endif
 
 end
@@ -302,7 +342,7 @@ end
 
 function timePlot
   restore,'filterdata.sav'
-  p1=plot(runTimeFilter,binSecSumFilter,dimensions=[1600,1200],margin=50,/device)
+  p1=plot(runTimeFilter,binNSecSumFilter,dimensions=[1600,1200],margin=50,/device)
   
   stop
   
