@@ -1,11 +1,10 @@
 pro dsdExamples
   
 
-  countsIn=[[0,2.,0,3.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],$
-  [0,0,0,3.,0,2.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+  countsIn=[[0,2.,0,3.,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]]
   
   diamIn=[1.5,2.5,3.5,4.5,5.5,6.5,7.5,9.,11.,13.,15.,17.,19.,21.,23.,25.,27.,29.,31.,33.,35.,37.,39.,41.,43.,45.,47.,49.]
-  diamLabels=[2,3,4,5,6,7,8,10,12.,14.,16.,18.,20.,22.,24.,26.,28.,30.,32.,34.,36.,38.,30.,42.,44.,46.,48.,50.]
+  diamLabels=['',2,3,4,5,6,7,8,10,12.,14.,16.,18.,20.,22.,24.,26.,28.,30.,32.,34.,36.,38.,30.,42.,44.,46.,48.,50.]
   
 ;  counts=[2,3]
 ;  diam=[2.5,4.5]
@@ -33,10 +32,14 @@ pro dsdExamples
     xc=(diam)^4.*(counts)
     vmd=total(xc)/total(xb)
     
-    p1=barplot(diam,counts,histogram=1,xtickname=string(diamLabels),dimensions=[1600,1200],layout=[1,2,i+1],margin=50,/device,/current)
-    t1=text(1400,890-(i*900/2),string(firstM),/device)
-    t2=text(1400,870-(i*900/2),string(vmd),/device)
+    p1=barplot(diam,counts,histogram=1,xtickname=string(diamLabels),dimensions=[1600,1200],layout=[1,n_elements(countsIn[i,*]),i+1],margin=50,/device,/current)
+    p1.xtickinterval=1.
+    p1.xrange=[1,51]
+    t1=text(1400,890-(i*900/2),string(firstM),/device,color='green')
+    t2=text(1400,870-(i*900/2),string(vmd),/device,color='blue')
     t2=text(1400,850-(i*900/2),string(vmd-firstM),/device)
+    p2=plot([firstM,firstM],[0,max(counts)],/overplot,'g',thick=2)
+    p3=plot([vmd,vmd],[0,max(counts)],/overplot,'b',thick=2)
   endfor
   
 end
