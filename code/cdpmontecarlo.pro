@@ -9,33 +9,43 @@ simDist=10d ;simulation distance [m]
 as=100d ;airspeed [m s-1]
 
 
-nArrQ=(as*areaQ*conc*(1d6)) ;mean number drops crossing sample area [drops s-1]
-nArrE=(as*areaE*conc*(1d6))
+intArrQ=1d/(as*areaQ*conc*(1d6)) ;idealized interarrival [s]
+intArrE=1d/(as*areaE*conc*(1d6))
 
 t=0d
 tLastDropQ=0d
 tLastDropE=0d
 time=simDist/as
 tArr=[]
+x=[];testing
+xTime=[0]
 
-tNextDropQ=1d/randomu(!null,poisson=nArrQ,/double)
-tNextDropE=1d/randomu(!null,poisson=nArrE,/double)
+tNextDropQ=1d/randomu(!null,poisson=(1d/intArrQ),/double)
+tNextDropE=1d/randomu(!null,poisson=(1d/intArrE),/double)
 
 
 while t lt time do begin
   dt=min([tNextDropQ,tNextDropE])
   
   if tNextDropQ le tLastDropQ then begin
+    x=[x,tNextDropQ]
     tArr=[tArr,tLastDropQ]  
+    xTime=[xTime,t]
     tLastDropQ=0d
-    ;tNextDropQ=1d/randomu(!null,poisson=nArrQ,/double)
-    tNextDropQ=(-1d)*(alog(randomu(!null,/double))*(1d/nArrQ))
+    tNextDropQ=(-1d)*(alog(randomu(!null,/double))*intArrQ)
   endif
     tLastDropQ=tLastDropQ+dt
     t=t+dt
 endwhile
 
-stop
+n=124.
+a=1.
+b=45935.
+
+elev=FINDGEN(N)*(ALOG10(b)-ALOG10(a))/(N-1)+ALOG10(a)
+elev=10.^elev
+
+
 ;arr=[]
 ;for i=0,9999 do begin
 ;  x=randomu(fu,poisson=90)
