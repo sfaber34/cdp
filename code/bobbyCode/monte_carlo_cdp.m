@@ -8,7 +8,7 @@ time = 0.1;                                        % Time of simulation in s
 saq = 0.24;                                      % Qualified Sample volume of CDP in mm^2
 sae = 20.1;                                      % Extended sample volume of CDP in mm^2
 %N = 100;                                             % Number concentration of natural particles cm-3
-Nliq = 500;                                       % Number concentration of liquid particles cm-3
+Nliq = 1000;                                       % Number concentration of liquid particles cm-3
 %particle_size = 500;                                 % 1000 micron particle
 %liq_size = 25;
 
