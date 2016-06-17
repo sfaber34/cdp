@@ -8,7 +8,7 @@ time = 0.1;                                        % Time of simulation in s
 saq = 0.24;                                      % Qualified Sample volume of CDP in mm^2
 sae = 20.1;                                      % Extended sample volume of CDP in mm^2
 %N = 100;                                             % Number concentration of natural particles cm-3
-Nliq = 1000;                                       % Number concentration of liquid particles cm-3
+Nliq = 1;                                       % Number concentration of liquid particles cm-3
 %particle_size = 500;                                 % 1000 micron particle
 %liq_size = 25;
 
@@ -89,6 +89,10 @@ for(i=1:num_ensembles)
         end
         t = t + dt;
     end
+    
+    n=int_arr > int_arr_qualified;
+    nnz(n)/numel(int_arr)
+    
     [h,bins] = hist(int_arr(int_arr > 0), logspace(-7,0,40));
     hists(i,:) = h;
     int_arr = [];
