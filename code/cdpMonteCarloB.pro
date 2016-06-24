@@ -1,4 +1,4 @@
-pro cdpMonteCarloB,conc
+pro cdpMonteCarloB,conc=conc
   tic
   dtClock=2.5e-7 ;time for 1 clock cycle [s]
   
@@ -7,7 +7,17 @@ pro cdpMonteCarloB,conc
   saQX=1.5d-4
   saQZ=8d-5
   
-  ;conc=80d ;per cm3
+  saQZU=.5*saQZ
+  saQZL=.5*saQZ-saQZ
+  saQXU=.5*saEX+.5*saQX
+  saQXL=.5*saEX-.5*saQX
+  saQYU=.5*saEZ+.5*saQZ
+  saQYL=.5*saEZ-.5*saQZ
+  
+  saEZU=.5*saEZ
+  saEZL=.5*saEZ-saEZ
+  
+  ;if isa(conc) eq 0 then conc=400d ;per cm3
   concCm=conc
   
   simDist=10d ;simulation distance [m]
@@ -25,98 +35,82 @@ pro cdpMonteCarloB,conc
   ;------Create sample area-----
   
   saEcircX=dindgen(2000,start=0,increment=saEZ/1999.)
-  saECircTop=(((.5*saEZ)^2.-(saEcircX-(.5*saEZ))^2.)^(1./2.))+(.5*saEZ)
-  saECircBottom=-1.*(((.5*saEZ)^2.-(saEcircX-(.5*saEZ))^2.)^(1./2.))+(.5*saEZ)
+  saECircTop=(((.5*saEZ)^2.-(saEcircX-(.5*saEZ))^2.)^(1./2.))
+  saECircBottom=-1.*(((.5*saEZ)^2.-(saEcircX-(.5*saEZ))^2.)^(1./2.))
   
-  saQcircX=dindgen(200,start=.5*saEZ-.5*saQZ,increment=saQZ/199.)
-  saQCircTop=(((.5*saQZ)^2.-(saQcircX-(2.5d-4))^2.)^(1./2.))+(.5*saEZ)
-  saQCircBottom=-1.*(((.5*saQZ)^2.-(saQcircX-(2.5d-4))^2.)^(1./2.))+(.5*saEZ)
+  saQcircX=dindgen(200,start=saQYL,increment=saQZ/199.)
+  saQCircTop=(((.5*saQZ)^2.-(saQcircX-(2.5d-4))^2.)^(1./2.))
+  saQCircBottom=-1.*(((.5*saQZ)^2.-(saQcircX-(2.5d-4))^2.)^(1./2.))
   
   rand=randomu(!null,3,conc,/double)
   nCoords=n1(rand[0,*])
   
   dropX=reform(rand[0,*]*saEX,nCoords)
   dropY=reform(rand[1,*]*simDist,nCoords)
-  dropZ=reform(rand[2,*]*saEZ,nCoords)
+  dropZ=reform(rand[2,*]*saEZ-(.5)*saEZ,nCoords)
   
   ;p1=scatterplot3d(dropY,dropX,dropZ,dimensions=[1600,1200])
   ;p2=plot3d(dindgen(n1(saEcircX),increment=0,start=(.5*saEZ)),saEcircX,saECircTop,/overplot)
   
   ;------keep these------
-;  p1=plot([0,1],[0,1],dimensions=[900,900],margin=50,/device,/nodata)
+  ;p1=plot([0,1],[0,1],dimensions=[990,990],margin=50,/device,/nodata)
 ;  p1.xrange=[0,simDist]
 ;  p1.yrange=[0,saEZ]
-;  
+ 
 ;  psaETop=plot(saEcircX,saECircTop,/device,/overplot)
 ;  psaeBottom=plot(saEcircX,saECircBottom,/device,/overplot)
 ;  
-;  x=plot([saQcircX[0],saQcircX[0]],[0,5d-4],/overplot)
-;  x=plot([max(saQcircX),max(saQcircX)],[0,5d-4],/overplot)
-;  x.xrange=[0,5d-4]
 ;  
 ;  psaQTop=plot(saQcircX,saQCircTop,/device,/overplot)
 ;  psaQBottom=plot(saQcircX,saQCircBottom,/device,/overplot)
-;  
-;  s2=scatterplot(dropY,dropZ,symbol='.',sym_size=3,sym_transparency=60,sym_filled=1,title='X/Z',/overplot)
 
   t=0
   i=0
   nt=0
   validDrop=0
-  fu = Obj_New('IDLanROI', saEcircX, saECircTop)
-  fuB = Obj_New('IDLanROI', saEcircX, saECircBottom)
-  fuC = Obj_New('IDLanROI', saQcircX, saQCircTop)
-  fuD = Obj_New('IDLanROI', saQcircX, saQCircBottom)
+
   
   while validDrop[0] gt -1 do begin
     isInSaE=[]
     isInSaQ=[]
+    
+    plotDropsInds=where(dropY lt saEZ)
+    plotDropY=dropY[plotDropsInds]
+    plotDropZ=dropZ[plotDropsInds]
     
     ;dtFilter=where(dropY-saEZ gt 0)
     ;dt=max([min(abs(dropY-max(saEcircX))/as),min(abs(dropY-max(saQcircX))/as),dtClock])
     dt=dtclock
     
     ;cgcleanup
-    ;p1=plot([0,1],[0,1],dimensions=[1200,800],margin=50,/device,/nodata)
-    ;s2=scatterplot(dropY,dropZ,symbol='.',sym_size=3,sym_transparency=60,sym_filled=1,title='X/Z',/overplot)
     
-    if n(where(dropY lt saEZ*1.00001 and dropY gt 0)) gt 0 then begin
-      ;s2=scatterplot(dropY,dropZ,symbol='.',sym_size=3,sym_transparency=60,sym_color='red',sym_filled=1,title='X/Z',/overplot)
-      if n(where(dropZ gt .5*saEZ) gt 0) then begin         
-        isinsaETop=where(fu->ContainsPoints(dropY,dropZ) eq 1,/null)        
-      endif
-      if n(where(dropZ lt .5*saEZ) gt 0) then begin         
-        isinsaEBottom=where(fuB->ContainsPoints(dropY,dropZ) eq 1,/null)
-      endif
-        
-        
-        if n(where(dropX gt .5*saEX-.5*saQX and dropX lt .5*saEX+.5*saQX)) gt 0 then begin
-          if n(where(dropZ gt .5*saEZ) gt 0) then begin
-            isinsaQTop=where(fuC->ContainsPoints(dropY,dropZ) eq 1,/null)
-          endif
-          if n(where(dropZ lt .5*saEZ) gt 0) then begin
-            isinsaQBottom=where(fuD->ContainsPoints(dropY,dropZ) eq 1,/null)
-          endif
-          isInSaQ=[isinsaQTop,isinsaQBottom]
-        endif
-          if isa(isInSaQ) eq 0 then isInSaE=[isinsaETop,isinsaEBottom] else isInSaE=[isinsaETop,isinsaEBottom]-isInSaQ
+    
+    possInE=where(dropY lt saEZ and dropY gt 0 and dropZ gt saEZL and dropZ lt saEZU)
+    if possInE[0] gt 0 then begin
+      saECircEq=(((.5*saEZ)^2.-(dropY[possInE]-(.5*saEZ))^2.)^(1./2.))
+      
+      diffs=saECircEq - abs(dropZ[possInE])
+      isInSaE=possInE[where(diffs gt 0,/null)]
+    endif  
+    
+    possInQ=where(dropY lt saQYU and dropY gt saQYL and dropZ gt saQZL and dropZ lt saQZU and dropX gt saQXL and dropX lt saQXU)
+    if possInQ[0] gt 0 then begin
+      saQCircEq=((.5*saQZ)^2.-(dropY[possInQ]-(2.5d-4))^2.)^(1./2.)
+
+      diffs=saQCircEq - abs(dropZ[possInQ])
+      isInSaQ=possInQ[where(diffs gt 0,/null)]
     endif
     
-    
-    
-    
-    
-      
       
       nDropsInSaE[i]=n1(isInSaE)
       nDropsInSaQ[i]=n1(isInSaQ)
 
    
-    ;if isInSaE[0] gt 0 then s3=scatterplot(dropY[isInSaE],dropZ[isInSaE],symbol='.',sym_size=5,sym_transparency=30,sym_color='red',sym_filled=1,title='X/Z',/overplot)
-    if(nt gt 800.) then begin
-      print,ceil((t/reqTime)*100d)
-      nt=0d
-    endif
+    ;s3=scatterplot(dropY[isInSaE],dropZ[isInSaE],symbol='.',sym_size=5,sym_transparency=30,sym_color='red',sym_filled=1,title='X/Z',/overplot)
+;    if(nt gt 800.) then begin
+;      print,ceil((t/reqTime)*100d)
+;      nt=0d
+;    endif
     validDrop=where(dropY gt 0)
     
     dropY=dropY[validDrop]-as*dt
@@ -131,12 +125,7 @@ pro cdpMonteCarloB,conc
   
   coincSaQ=where(nDropsInSaQ gt 1)
   coincSaE=where(nDropsInSaE gt 1)
-  coincBoth=where(nDropsInSaE gt 1 and nDropsInSaQ gt 1)
-  
-  Obj_Destroy, fu
-  Obj_Destroy, fuB
-  Obj_Destroy, fuC
-  Obj_Destroy, fuD
+  coincBoth=where(nDropsInSaE gt 0 and nDropsInSaQ gt 0)
    
    t=timestamp()
    ts=strsplit(t,'T',/extract)
@@ -145,15 +134,15 @@ pro cdpMonteCarloB,conc
    
   savename=strcompress('saves/'+string(concCm)+'-'+tsb+'.sav')
   endtime=toc()
+  print,string(concCm)+'-->'+string(endtime)
   save,filename=savename,coincSaQ,coincSaE,coincBoth,nDropsInSaE,nDropsInSaQ,timeStep,concCm,endtime
 end
 
 
 pro loopCarlo
-  conc=[10,10,10,30,30,50,50,75,75,100,100,150,200,250,300,350,400]
-  
+  conc=[25,50,100,200,500,600,700,800]
   for i=0,n(conc) do begin
-    cdpMonteCarloB,conc[i]
+    cdpMonteCarloB,conc=conc[i]
   endfor
   
 end
