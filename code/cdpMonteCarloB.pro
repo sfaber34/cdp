@@ -1,5 +1,5 @@
-pro cdpMonteCarloB
-
+pro cdpMonteCarloB,conc
+  tic
   dtClock=2.5e-7 ;time for 1 clock cycle [s]
   
   saEX=8d-3 ;estimate from lance 2012 [m]
@@ -7,16 +7,15 @@ pro cdpMonteCarloB
   saQX=1.5d-4
   saQZ=8d-5
   
-  conc=80d ;per cm3
+  ;conc=80d ;per cm3
+  concCm=conc
   
-  
-  simDist=1d ;simulation distance [m]
+  simDist=10d ;simulation distance [m]
   as=100d ;airspeed [m s-1]
   
   reqTime=simDist/as
   
   conc=conc*((saEX*saEZ*simDist)*1d6)
-  
   
   timeStep=dindgen((reqTime/dtClock),start=!values.D_nan,increment=0)
   nDropsInSaE=indgen((reqTime/dtClock),start=0,increment=0)
@@ -43,22 +42,22 @@ pro cdpMonteCarloB
   ;p1=scatterplot3d(dropY,dropX,dropZ,dimensions=[1600,1200])
   ;p2=plot3d(dindgen(n1(saEcircX),increment=0,start=(.5*saEZ)),saEcircX,saECircTop,/overplot)
   
-  
-  p1=plot([0,1],[0,1],dimensions=[900,900],margin=50,/device,/nodata)
-  p1.xrange=[0,simDist]
-  p1.yrange=[0,saEZ]
-  
-  psaETop=plot(saEcircX,saECircTop,/device,/overplot)
-  psaeBottom=plot(saEcircX,saECircBottom,/device,/overplot)
-  
-  x=plot([saQcircX[0],saQcircX[0]],[0,5d-4],/overplot)
-  x=plot([max(saQcircX),max(saQcircX)],[0,5d-4],/overplot)
-  x.xrange=[0,5d-4]
-  
-  psaQTop=plot(saQcircX,saQCircTop,/device,/overplot)
-  psaQBottom=plot(saQcircX,saQCircBottom,/device,/overplot)
-  
-  s2=scatterplot(dropY,dropZ,symbol='.',sym_size=3,sym_transparency=60,sym_filled=1,title='X/Z',/overplot)
+  ;------keep these------
+;  p1=plot([0,1],[0,1],dimensions=[900,900],margin=50,/device,/nodata)
+;  p1.xrange=[0,simDist]
+;  p1.yrange=[0,saEZ]
+;  
+;  psaETop=plot(saEcircX,saECircTop,/device,/overplot)
+;  psaeBottom=plot(saEcircX,saECircBottom,/device,/overplot)
+;  
+;  x=plot([saQcircX[0],saQcircX[0]],[0,5d-4],/overplot)
+;  x=plot([max(saQcircX),max(saQcircX)],[0,5d-4],/overplot)
+;  x.xrange=[0,5d-4]
+;  
+;  psaQTop=plot(saQcircX,saQCircTop,/device,/overplot)
+;  psaQBottom=plot(saQcircX,saQCircBottom,/device,/overplot)
+;  
+;  s2=scatterplot(dropY,dropZ,symbol='.',sym_size=3,sym_transparency=60,sym_filled=1,title='X/Z',/overplot)
 
   t=0
   i=0
@@ -114,7 +113,7 @@ pro cdpMonteCarloB
 
    
     ;if isInSaE[0] gt 0 then s3=scatterplot(dropY[isInSaE],dropZ[isInSaE],symbol='.',sym_size=5,sym_transparency=30,sym_color='red',sym_filled=1,title='X/Z',/overplot)
-    if(nt gt 50.) then begin
+    if(nt gt 800.) then begin
       print,ceil((t/reqTime)*100d)
       nt=0d
     endif
@@ -130,10 +129,31 @@ pro cdpMonteCarloB
 
   endwhile
   
-  coincSaE=where(nDropsInSaE ge 2)
+  coincSaQ=where(nDropsInSaQ gt 1)
+  coincSaE=where(nDropsInSaE gt 1)
+  coincBoth=where(nDropsInSaE gt 1 and nDropsInSaQ gt 1)
+  
   Obj_Destroy, fu
   Obj_Destroy, fuB
   Obj_Destroy, fuC
   Obj_Destroy, fuD
-  stop
+   
+   t=timestamp()
+   ts=strsplit(t,'T',/extract)
+   ts=ts[1]
+   tsb=strmid(ts,0,8)
+   
+  savename=strcompress('saves/'+string(concCm)+'-'+tsb+'.sav')
+  endtime=toc()
+  save,filename=savename,coincSaQ,coincSaE,coincBoth,nDropsInSaE,nDropsInSaQ,timeStep,concCm,endtime
+end
+
+
+pro loopCarlo
+  conc=[10,10,10,30,30,50,50,75,75,100,100,150,200,250,300,350,400]
+  
+  for i=0,n(conc) do begin
+    cdpMonteCarloB,conc[i]
+  endfor
+  
 end
