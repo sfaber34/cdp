@@ -1,4 +1,4 @@
-pro cdpMonteCarloB,conc=conc
+function cdpMonteCarloB,conc=conc
   tic
   dtClock=2.5e-7 ;time for 1 clock cycle [s]
   
@@ -123,9 +123,9 @@ pro cdpMonteCarloB,conc=conc
 
   endwhile
   
-  coincSaQ=where(nDropsInSaQ gt 1)
-  coincSaE=where(nDropsInSaE gt 1)
-  coincBoth=where(nDropsInSaE gt 0 and nDropsInSaQ gt 0)
+  coincSaQ=n(where(nDropsInSaQ gt 1))
+  coincSaE=n(where(nDropsInSaE gt 1))
+  coincBoth=n(where(nDropsInSaE gt 0 and nDropsInSaQ gt 0))
    
    t=timestamp()
    ts=strsplit(t,'T',/extract)
@@ -135,14 +135,27 @@ pro cdpMonteCarloB,conc=conc
   savename=strcompress('saves/'+string(concCm)+'-'+tsb+'.sav')
   endtime=toc()
   print,string(concCm)+'-->'+string(endtime)
-  save,filename=savename,coincSaQ,coincSaE,coincBoth,nDropsInSaE,nDropsInSaQ,timeStep,concCm,endtime
+  ;save,filename=savename,coincSaQ,coincSaE,coincBoth,nDropsInSaE,nDropsInSaQ,timeStep,concCm,endtime
+  return,[conccm,coincSaQ,coincSaE,coincBoth,endtime]
 end
 
 
 pro loopCarlo
-  conc=[25,50,100,200,500,600,700,800]
+  ;conc=[10,10,10,10,25,25,25,25,50,50,50,50,75,75,75,75,100,100,100,100,150,150,150,150,200,200,200,200,300,300,300,300,400,400,400,400,500,500,500,500,600,600,600,600,700,700,700,700,800,800,800,800,900,900,900,900,1000,1000,1000,1000]
+  conc=[10,25,50,75,100,150,200,300,400,500,600,700]
+  conccm=[]
+  coincSaQ=[]
+  coincSaE=[]
+  coincBoth=[]
+  endtime=[]
   for i=0,n(conc) do begin
-    cdpMonteCarloB,conc=conc[i]
+    ret=cdpMonteCarloB(conc=conc[i])
+    
+    conccm=[conccm,ret[0]]
+    coincSaQ=[coincSaQ,ret[1]]
+    coincSaE=[coincSaE,ret[2]]
+    coincBoth=[coincBoth,ret[3]]
+    endtime=[endtime,ret[4]]
   endfor
-  
+    save,filename='saves/mulTestB.sav',conccm,coincSaQ,coincSaE,coincBoth,endtime
 end
