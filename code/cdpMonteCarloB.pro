@@ -107,10 +107,8 @@ function cdpMonteCarloB,conc=conc
 
    
     ;s3=scatterplot(dropY[isInSaE],dropZ[isInSaE],symbol='.',sym_size=5,sym_transparency=30,sym_color='red',sym_filled=1,title='X/Z',/overplot)
-;    if(nt gt 800.) then begin
-;      print,ceil((t/reqTime)*100d)
-;      nt=0d
-;    endif
+     if i mod reqTime/(reqTime*10d-1) eq 0 then print,ceil((t/reqTime)*100d)
+
     validDrop=where(dropY gt 0)
     
     dropY=dropY[validDrop]-as*dt
@@ -127,8 +125,8 @@ function cdpMonteCarloB,conc=conc
   coincSaE=n(where(nDropsInSaE gt 1))
   coincBoth=n(where(nDropsInSaE gt 0 and nDropsInSaQ gt 0))
    
-   t=timestamp()
-   ts=strsplit(t,'T',/extract)
+   tsb=timestamp()
+   ts=strsplit(tsb,'T',/extract)
    ts=ts[1]
    tsb=strmid(ts,0,8)
    
@@ -141,8 +139,10 @@ end
 
 
 pro loopCarlo
-  ;conc=[10,10,10,10,25,25,25,25,50,50,50,50,75,75,75,75,100,100,100,100,150,150,150,150,200,200,200,200,300,300,300,300,400,400,400,400,500,500,500,500,600,600,600,600,700,700,700,700,800,800,800,800,900,900,900,900,1000,1000,1000,1000]
-  conc=[10,25,50,75,100,150,200,300,400,500,600,700]
+  conca=[10,10,10,10,25,25,25,25,50,50,50,50,75,75,75,75,100,100,100,100,150,150,150,150,200,200,200,200,300,300,300,300,400,400,400,400,500,500,500,500,600,600,600,600,700,700,700,700,800,800,800,800,900,900,900,900,1000,1000,1000,1000]
+  ;conc=[20,25,50,75,100,150,200,300,400,500,600,700]
+  conca=indgen(30,start=1)*20.
+  conc=[conca,conca,conca,conca,conca]
   conccm=[]
   coincSaQ=[]
   coincSaE=[]
@@ -150,12 +150,13 @@ pro loopCarlo
   endtime=[]
   for i=0,n(conc) do begin
     ret=cdpMonteCarloB(conc=conc[i])
-    
+    print,'---------'+string(i/n1(conc)*100d)+'---------'
     conccm=[conccm,ret[0]]
     coincSaQ=[coincSaQ,ret[1]]
     coincSaE=[coincSaE,ret[2]]
     coincBoth=[coincBoth,ret[3]]
     endtime=[endtime,ret[4]]
-  endfor
     save,filename='saves/mulTestB.sav',conccm,coincSaQ,coincSaE,coincBoth,endtime
+  endfor
+    
 end
