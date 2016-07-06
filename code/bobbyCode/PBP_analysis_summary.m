@@ -1,10 +1,10 @@
 clear
 for(l=1:7)
-    period_to_view = l;
+    period_to_view = 1;
 
     switch(period_to_view)
         case 1
-            file = '8um_PBP.csv';
+            file = '/Users/spencerfaber/research/cdp/code/data/CDP_20160701_234612.csv';
         case 2
             file = '10um_PBP.csv';
         case 3

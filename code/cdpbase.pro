@@ -48,7 +48,7 @@ pro cdpBase,filter=filter
   if n_elements(filter) gt 0 then doFilter=1 else doFilter=0
   
   ;data=read_csv('data/CDP_20160519_203922Snip.csv')
-  data=read_csv('data/CDP_20160519_203922.csv')
+  data=read_csv('data/CDP_20160701_234612.csv')
   
   nRows = n_elements(data.(0))
   
@@ -81,16 +81,13 @@ pro cdpBase,filter=filter
   val=make_array(256,rowCount)
   pbpACD=make_array(256,rowCount)
   pbpACD[*,*]=!VALUES.F_NAN
-  pbpN=make_array(256,rowCount)
-  pbpN[*,*]=!VALUES.F_NAN
-  pbpD=make_array(256,rowCount)
-  pbpD[*,*]=!VALUES.F_NAN
+  pbpN=make_array(256,rowCount)*!VALUES.F_NAN
+  pbpD=make_array(256,rowCount)*!VALUES.F_NAN
   pbpDEx=make_array(256,rowCount)
   pbpDEx[*,*]=!VALUES.F_NAN
   pbpBin=make_array(256,rowCount)
   pbpBin[*,*]=!VALUES.F_NAN
-  pbpTime=make_array(256,rowCount)
-  pbpTime[*,*]=!VALUES.F_NAN
+  pbpTime=make_array(256,rowCount)*!VALUES.F_NAN
   binN=make_array(27,rowCount)
   binNEx=make_array(48,rowCount)
   pbpNEx=make_array(48,rowCount)
@@ -195,7 +192,7 @@ pro cdpBase,filter=filter
     sec=[sec,secXB[0]]
     
     adcOverflow=[adcOverflow,adcOverflowCol[u]]
-    aveTrans=[aveTrans,aveTransCol[u]]
+    aveTrans=[aveTrans,aveTransCol[u]*(2.5d-3)]
     dofRej=[dofRej,dofRejCol[u]]
     binNSecSum=[binNSecSum,total(binN[*,u])]
     
@@ -249,12 +246,19 @@ pro cdpBase,filter=filter
         x=where(pbpACD[i,u] le binADCBounds)
         x=x[0]
         if x ne -1 then begin
-          pbpBin[i,u]=x
-          pbpD[i,u]=binDBounds[x]
+            pbpBin[i,u]=x
+            pbpD[i,u]=binDBounds[x]
+          
+          
+          x=-1
         endif else begin
-          pbpBin[i,u]=!values.F_INFINITY
-          pbpD[i,u]=!values.F_INFINITY
+          pbpBin[i,u]=!values.F_NAN
+          pbpD[i,u]=!values.F_NAN
         endelse
+        if pbpACD[i,u] eq 4095 then begin
+          pbpBin[i,u]=!values.F_infinity
+          pbpD[i,u]=!values.F_infinity
+        endif
       endif
       if pbpACD[i,u] lt binADCBounds[0] and pbpACD[i,u] gt 0. then begin
         pbpBin[i,u]=1
@@ -315,6 +319,7 @@ pro cdpBase,filter=filter
 
     pbp=pbp[*,1:rowCount-1]
     pbpACD=pbpACD[*,1:rowCount-1]
+    pbpD=pbpD[*,1:rowCount-1]
     pbpN=pbpN[*,1:rowCount-1]
     pbpBin=pbpBin[*,1:rowCount-1]
     pbpTime=pbpTime[*,1:rowCount-1]
@@ -325,7 +330,7 @@ pro cdpBase,filter=filter
     aveTrans=aveTrans[1:rowCount-1]
     dofRej=dofRej[1:rowCount-1]   
   endif  
-
+stop
 
   save,filename=savename,date,hour,min,sec,binN,binNSum,binNEx,binNExSum,adcOverflow,aveTrans,dofRej,$
     runtime,binNSecSum,pbpN,pbpBin,xBin,xBinEx,pbpNSecSum,pbpNEx,pbpNSum,pbpNExSum,pbpACD,pbpTime,/verbose
