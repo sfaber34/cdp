@@ -48,7 +48,7 @@ pro cdpBase,filter=filter
   if n_elements(filter) gt 0 then doFilter=1 else doFilter=0
   
   ;data=read_csv('data/CDP_20160519_203922Snip.csv')
-  data=read_csv('data/CDP_20160701_234612.csv')
+  data=read_csv('data/CDP_20160710_223147.csv')
   
   nRows = n_elements(data.(0))
   
