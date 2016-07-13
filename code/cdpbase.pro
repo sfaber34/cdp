@@ -48,7 +48,7 @@ pro cdpBase,filter=filter
   if n_elements(filter) gt 0 then doFilter=1 else doFilter=0
   
   ;data=read_csv('data/CDP_20160519_203922Snip.csv')
-  data=read_csv('data/CDP_20160710_223147.csv')
+  data=read_csv('data/CDP_20160712_233137.csv')
   
   nRows = n_elements(data.(0))
   
@@ -330,7 +330,7 @@ pro cdpBase,filter=filter
     aveTrans=aveTrans[1:rowCount-1]
     dofRej=dofRej[1:rowCount-1]   
   endif  
-stop
+
 
   save,filename=savename,date,hour,min,sec,binN,binNSum,binNEx,binNExSum,adcOverflow,aveTrans,dofRej,$
     runtime,binNSecSum,pbpN,pbpBin,xBin,xBinEx,pbpNSecSum,pbpNEx,pbpNSum,pbpNExSum,pbpACD,pbpTime,/verbose
