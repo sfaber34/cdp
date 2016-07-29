@@ -1,4 +1,4 @@
-pro cdpBase,filter=filter
+pro cdpBase,file=file,filter=filter
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ;
@@ -46,8 +46,16 @@ pro cdpBase,filter=filter
   
   
   if n_elements(filter) gt 0 then doFilter=1 else doFilter=0
+  if isa(file) eq 1 then begin
+    data=read_csv(file)
+    x=strsplit(file,/extract,'_')
+    y=strsplit(x[2],/extract,'.')
+    savename='saves/'+y[0]+'.sav'
+  endif else begin
+    data=read_csv('data/CDP_20160728_153816.csv')
+  endelse
   
-  data=read_csv('data/CDP_20160728_153816.csv')
+  
   
   nRows = n_elements(data.(0))
   
@@ -67,7 +75,7 @@ pro cdpBase,filter=filter
     endfor    
     savename='cdpdatafilter.sav'
   endif else begin
-    savename='cdpdata.sav'
+    if isa(file) eq 0 then savename='cdpdata.sav'    
     rowCount=nRows
   endelse
 
@@ -89,8 +97,9 @@ pro cdpBase,filter=filter
   pbpTime=make_array(256,rowCount)*!VALUES.F_NAN
   binN=make_array(27,rowCount)
   binNEx=make_array(48,rowCount)
-  pbpNEx=make_array(48,rowCount)
+  pbpNEx=binNEx
   xBin=dindgen(27,start=0,increment=1)
+  xBinEdge=[indgen(6,start=3),indgen(21, start=10,increment=2)]
   xBinEx=dindgen(48,start=3,increment=1)
   binNSum=dindgen(27,start=0,increment=0)
   binNExSum=dindgen(48,start=0,increment=0)
@@ -110,6 +119,7 @@ pro cdpBase,filter=filter
 
   binDBounds=[2,3,4,5,6,7,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50]
   binADCBounds=[30,83,105,173,219,265,307,367,428,502,593,726,913,1100,1258,1396,1523,1661,1803,2008,2274,2533,2782,3017,3252,3477,3716,4025]
+  binGeoMean=[2.5,3.5,4.5,5.5,6.5,7.5,9.,findgen(20,start=11,increment=2)]
 
   ;-----ADDITIONAL THRESHOLD VALUES-----
   ;binADCBounds=[30,91,111,159,190,215,243,272,355,488,636,751,846,959,1070,1297,1452,1665,1851,2016,2230,2513,2771,3003,3220,3424,3660,4095]
@@ -157,7 +167,7 @@ pro cdpBase,filter=filter
     if 2*(i/2) ne i then k++
   endfor
   
-  
+  if isa(file) then print,'-----'+file+'-----'
   ;-----------------------CALCULATE PBP SIZE/ARRIVAL TIME (REBINNED), TIME, REJECTED COUNTS-----------------------
   adcOverflowCol=data.(18)
   aveTransCol=data.(15)
@@ -302,6 +312,22 @@ pro cdpBase,filter=filter
     pbpNExSum[i]=pbpNSum[k]
     if 2*(i/2) ne i then k++
   endfor
+ 
+  
+  ;-------CALC A FEW STATS---------
+  binNMedRedist=[]
+  for i=0,n(binNSum) do begin
+    if binNSum[i] gt 0 then binNMedRedist=[binNMedRedist,replicate(binGeoMean[i],binNSum[i])]
+  endfor
+  
+  binNMed=med(binNMedRedist)
+  binNMean=mean(binNMedRedist)
+  binNQ1=q1(binNMedRedist)
+  binNQ3=q3(binNMedRedist)
+  binNMom=moment(binNMedRedist)
+  binNVar=binNMom[1]
+  binNSkew=binNMom[2]
+  binNKurt=binNMom[3]
 
 
   ;-----------------------REMOVE INITIALIZATION COLUMN-----------------------
@@ -332,7 +358,8 @@ pro cdpBase,filter=filter
 
 
   save,filename=savename,date,hour,min,sec,binN,binNSum,binNEx,binNExSum,adcOverflow,aveTrans,dofRej,$
-    runtime,binNSecSum,pbpN,pbpBin,xBin,xBinEx,pbpNSecSum,pbpNEx,pbpNSum,pbpNExSum,pbpACD,pbpTime,/verbose
+    runtime,binNSecSum,pbpN,pbpBin,xBin,xBinEx,pbpNSecSum,pbpNEx,pbpNSum,pbpNExSum,pbpACD,pbpTime,$
+    xBinEdge,binNMed,binNMean,binNQ1,binNQ3,binNVar,binNSkew,binNKurt
     
   if doFilter eq 0 then begin
     runTimeFilter=runTime
