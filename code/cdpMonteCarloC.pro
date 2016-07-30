@@ -12,8 +12,12 @@ pro cdpMonteCarloC,conc=conc
   
   conc=100. ;concentration of drops [not truely concentration yet, more like number of drops intercepted]
   conc=conc*1d6
+  
   rEx=2d-4 ; extended sample area radius
   yEx=8d-3 ;width of extended sample area
+  rQ=4d-5
+  yQ=4d-4
+  
   as=100. ;true airspeed
   dist=10. ;simulation distance
   simTime=dist/as
@@ -30,12 +34,12 @@ pro cdpMonteCarloC,conc=conc
   tMeanEx=1./numDrops
   
   
-  drops=make_array(6,numDrops) ;tArrEx,y,z,tIn,tOut;stepCross
+  drops=make_array(6,numDrops) ;tArrEx,y,z,tInEx,tOutEx,tArrQ,tInQ,tOutQ
   dropTime=make_array(numDrops)
   
-  tArr=(randomu(!null,numDrops))*simTime
+  tArrEx=(randomu(!null,numDrops))*simTime
   z=randomu(!null,numDrops)*2*rEx-rEx
-  y=randomu(!null,numDrops)*rEx
+  y=randomu(!null,numDrops)*yEx
 
   
 ;  for i=1,n(tIntArr) do begin
@@ -44,18 +48,21 @@ pro cdpMonteCarloC,conc=conc
 ;  dropTime[0]=tIntArr[0]
   
   
-  drops[0,*]=tArr
-  drops[2,*]=z
+  drops[0,*]=tArrEx
   drops[1,*]=y
+  drops[2,*]=z
   
   dropsTSort=sort(drops[0,*])
   drops=drops[*,dropsTSort]
-
   
-  tArrMIn=(rEx-sqrt(rEx^2.-abs(z)^2.))/as
-  tCross=2.*(sqrt(rEx^2.-abs(z)^2.)/as)
-  drops[3,*]=tArrMIn+drops[0,*] ;tIn
-  drops[4,*]=drops[3,*]+tCross ;tOut
+  drops[5,*]=drops[0,*]+(rQ/as) ;qualified 'gate' arrival time
+  outOfQBounds=where(abs(drops[2,*]) gt rQ or (drops[1,*] lt .5*yEx-.5*yQ or drops[1,*] gt .5*yEx+.5*yQ))
+  drops[5,outOfQBounds]=!values.d_nan
+  
+  tInEx=(rEx-sqrt(rEx^2.-abs(z)^2.))/as
+  tCrossEx=2.*(sqrt(rEx^2.-abs(z)^2.)/as)
+  drops[3,*]=tInEx+drops[0,*] ;tInEx
+  drops[4,*]=drops[3,*]+tCrossEx ;tOutEx
   
   ;-------Figure out to flag coinc------------
   
@@ -67,133 +74,8 @@ pro cdpMonteCarloC,conc=conc
     endfor
   endfor
 
-  
-  stop
 
-
-  saEX=8d-3 ;estimate from lance 2012 [m]
-  saEZ=5d-4
-  saQX=1.5d-4
-  saQZ=8d-5
-
-  saQZU=.5*saQZ
-  saQZL=.5*saQZ-saQZ
-  saQXU=.5*saEX+.5*saQX
-  saQXL=.5*saEX-.5*saQX
-  saQYU=.5*saEZ+.5*saQZ
-  saQYL=.5*saEZ-.5*saQZ
-
-  saEZU=.5*saEZ
-  saEZL=.5*saEZ-saEZ
-
-  ;if isa(numDrops) eq 0 then numDrops=400d ;per cm3
-  concCm=conc
-
-  simDist=10d ;simulation distance [m]
-  as=100d ;airspeed [m s-1]
-
-  reqTime=simDist/as
-
-  conc=conc*((saEX*saEZ*simDist)*1d6)
-
-  timeStep=dindgen((reqTime/dtClock),start=!values.D_nan,increment=0)
-  nDropsInSaE=indgen((reqTime/dtClock),start=0,increment=0)
-  nDropsInSaQ=indgen((reqTime/dtClock),start=0,increment=0)
-
-
-  ;------Create sample area-----
-
-  saEcircX=dindgen(2000,start=0,increment=saEZ/1999.)
-  saECircTop=(((.5*saEZ)^2.-(saEcircX-(.5*saEZ))^2.)^(1./2.))
-  saECircBottom=-1.*(((.5*saEZ)^2.-(saEcircX-(.5*saEZ))^2.)^(1./2.))
-
-  saQcircX=dindgen(200,start=saQYL,increment=saQZ/199.)
-  saQCircTop=(((.5*saQZ)^2.-(saQcircX-(2.5d-4))^2.)^(1./2.))
-  saQCircBottom=-1.*(((.5*saQZ)^2.-(saQcircX-(2.5d-4))^2.)^(1./2.))
-
-  rand=randomu(!null,3,conc,/double)
-  nCoords=n1(rand[0,*])
-
-  dropX=reform(rand[0,*]*saEX,nCoords)
-  dropY=reform(rand[1,*]*simDist,nCoords)
-  dropZ=reform(rand[2,*]*saEZ-(.5)*saEZ,nCoords)
-
-  ;p1=scatterplot3d(dropY,dropX,dropZ,dimensions=[1600,1200])
-  ;p2=plot3d(dindgen(n1(saEcircX),increment=0,start=(.5*saEZ)),saEcircX,saECircTop,/overplot)
-
-  ;------keep these------
-  ;p1=plot([0,1],[0,1],dimensions=[990,990],margin=50,/device,/nodata)
-  ;  p1.xrange=[0,simDist]
-  ;  p1.yrange=[0,saEZ]
-
-  ;  psaETop=plot(saEcircX,saECircTop,/device,/overplot)
-  ;  psaeBottom=plot(saEcircX,saECircBottom,/device,/overplot)
-  ;
-  ;
-  ;  psaQTop=plot(saQcircX,saQCircTop,/device,/overplot)
-  ;  psaQBottom=plot(saQcircX,saQCircBottom,/device,/overplot)
-
-  t=0
-  i=0
-  nt=0
-  validDrop=0
-
-
-  while validDrop[0] gt -1 do begin
-    isInSaE=[]
-    isInSaQ=[]
-
-    plotDropsInds=where(dropY lt saEZ)
-    plotDropY=dropY[plotDropsInds]
-    plotDropZ=dropZ[plotDropsInds]
-
-    ;dtFilter=where(dropY-saEZ gt 0)
-    ;dt=max([min(abs(dropY-max(saEcircX))/as),min(abs(dropY-max(saQcircX))/as),dtClock])
-    dt=dtclock
-
-    ;cgcleanup
-
-
-    possInE=where(dropY lt saEZ and dropY gt 0 and dropZ gt saEZL and dropZ lt saEZU)
-    if possInE[0] gt 0 then begin
-      saECircEq=(((.5*saEZ)^2.-(dropY[possInE]-(.5*saEZ))^2.)^(1./2.))
-
-      diffs=saECircEq - abs(dropZ[possInE])
-      isInSaE=possInE[where(diffs gt 0,/null)]
-    endif
-
-    possInQ=where(dropY lt saQYU and dropY gt saQYL and dropZ gt saQZL and dropZ lt saQZU and dropX gt saQXL and dropX lt saQXU)
-    if possInQ[0] gt 0 then begin
-      saQCircEq=((.5*saQZ)^2.-(dropY[possInQ]-(2.5d-4))^2.)^(1./2.)
-
-      diffs=saQCircEq - abs(dropZ[possInQ])
-      isInSaQ=possInQ[where(diffs gt 0,/null)]
-    endif
-
-
-    nDropsInSaE[i]=n1(isInSaE)
-    nDropsInSaQ[i]=n1(isInSaQ)
-
-
-    ;s3=scatterplot(dropY[isInSaE],dropZ[isInSaE],symbol='.',sym_size=5,sym_transparency=30,sym_color='red',sym_filled=1,title='X/Z',/overplot)
-    if i mod reqTime/(reqTime*10d-1) eq 0 then print,ceil((t/reqTime)*100d)
-
-    validDrop=where(dropY gt 0)
-
-    dropY=dropY[validDrop]-as*dt
-    dropX=dropX[validDrop]
-    dropZ=dropZ[validDrop]
-    timeStep[i]=t
-    t=t+dt
-    i++
-    nt++
-
-  endwhile
-
-  coincSaQ=n(where(nDropsInSaQ gt 1))
-  coincSaE=n(where(nDropsInSaE gt 1))
-  coincBoth=n(where(nDropsInSaE gt 0 and nDropsInSaQ gt 0))
-
+ 
   tsb=timestamp()
   ts=strsplit(tsb,'T',/extract)
   ts=ts[1]
