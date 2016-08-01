@@ -22,6 +22,13 @@ files=['30umtest/CDP_20160728_212253','30umtest/CDP_20160728_212828','30umtest/C
 height=[22.7,20.8,18.4,16.,14.,12.]
 pres=[5.,5.,5.,5.,5.,5.]
 
+;---------------------FOR 30 UM 7 PSI TESTS ON 07/31/16 VARIABLE HEIGHT----------------------------
+files=['CDP_20160731_224433'] ;5 psi variable height
+height=[16.7]
+pres=[7.]
+
+
+
 
 
 return,{files:files,height:height,pres:pres}
@@ -108,7 +115,7 @@ pro vSecCounts
   for i=0,n(files) do begin
     restore,file='saves/'+files[i]+'.sav'
     
-    varX=pres
+    varX=height
     varY=binNSkew
     
     countErr=60.-binNSecSum
