@@ -3,8 +3,8 @@ pro sizeGlares
   
   ;--------------PATH--------------------
   ;dirpath='../images/30umtestB/75000' ; Path to dir containing streaks
-  dirpath='../images/30umtestB/150000' ; Path to dir containing streaks
-  
+  dirpath='../images/30umtestB/8000/' ; Path to dir containing streaks
+  ;dirpath=dialog_pickfile(/read)
   
   ;--------------OPTIONS-------------------
   test=0
@@ -18,17 +18,17 @@ pro sizeGlares
   
   
   
-  imgPath=file_search(dirpath+'/*')
+  imgPath=file_search(dirpath+'*')
   
-  imgHold=make_array(767,592)
+  ;imgHold=make_array(767,592)
   meanSig=[]
   for i=0,n(imgPath) do begin
     imgHold=read_image(imgPath[i])
     sig=where(imgHold gt threshA)
-    if n1(sig) gt 1 then meanSig=[temporary(meanSig),med(imgHold[sig])] else meanSig=[temporary(meanSig),!Values.d_nan]
+    if n1(sig) gt 1 then meanSig=[temporary(meanSig),mean(imgHold[sig])] else meanSig=[temporary(meanSig),!Values.d_nan]
   endfor
   
-  sigB=where(meanSig lt mean(meanSig,/nan)) ;Find Images with good streaks
+  sigB=where(meanSig le q1(meanSig)) ;Find Images with good streaks
   meanSig[sigB]=!Values.d_nan
   imgPath=imgPath[where(finite(meanSig))] ;Filter path array to only images with good streaks
   
@@ -76,7 +76,6 @@ pro sizeGlares
     dGlarePx=max(midYIndsDiff)
 
     dDrop=2.*dGlarePx / (ref*cos(ang) / (1.+ref^2.-2.*ref*cos(ang))^(1./2.) + sin(ang))
-    print,dDrop*2.3
     dUm=[temporary(dUm),dDrop*2.3]
 
     if test eq 1 then begin
