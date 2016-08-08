@@ -2,19 +2,19 @@ pro sizeGlares
   
   
   ;--------------PATH--------------------
-  ;dirpath='../images/30umtestB/75000' ; Path to dir containing streaks
-  dirpath='../images/30umtestB/8000/' ; Path to dir containing streaks
+  ;dirpath='../images/30umTest080416B/75000' ; Path to dir containing streaks
+  dirpath='../images/30umTest080416B/2000/' ; Path to dir containing streaks
   ;dirpath=dialog_pickfile(/read)
   
   ;--------------OPTIONS-------------------
   test=0
   
-  threshA=200
-  threshB=30
+  threshA=150
+  threshB=15
   ref=1.331 ;refractive index of water for .658 um laser
   ang=120. ;camera/laser angle
   ang=.5*ang*!DtoR ;ang=ang/2 and convert to radians
-  
+  umToPx=2.4
   
   
   
@@ -25,13 +25,15 @@ pro sizeGlares
   for i=0,n(imgPath) do begin
     imgHold=read_image(imgPath[i])
     sig=where(imgHold gt threshA)
-    if n1(sig) gt 1 then meanSig=[temporary(meanSig),mean(imgHold[sig])] else meanSig=[temporary(meanSig),!Values.d_nan]
+    gt0=where(imgHold gt 0)
+    if max(sig) ne -1 then meanSig=[temporary(meanSig),mean(imgHold[gt0])] else meanSig=[temporary(meanSig),!Values.d_nan]
+    meanSigHold=meanSig
   endfor
   
-  sigB=where(meanSig le q1(meanSig)) ;Find Images with good streaks
+  sigB=where(meanSigHold le q1(meanSig)) ;Find Images with good streaks
+  meanSig=meanSigHold
   meanSig[sigB]=!Values.d_nan
   imgPath=imgPath[where(finite(meanSig))] ;Filter path array to only images with good streaks
-  
   
   dUm=[]
   for i=0,n(imgPath) do begin
@@ -55,8 +57,8 @@ pro sizeGlares
     sig=whereB(img ge threshA,xind=sigX,yind=sigY) ;Find large streak signal pixels
     sigSmallStr=whereB(img ge threshB,xind=sigSmallX,yind=sigSmallY) ;Find small streak signal pixels
     
-    sigSmallY=sigSmallY[where(sigSmallX gt max(sigX)+ceil((max(sigX)-min(sigX))*.3))] ;Only select small streak pixels which are right of large streak
-    sigSmallX=sigSmallX[where(sigSmallX gt max(sigX)+ceil((max(sigX)-min(sigX))*.3))] 
+    sigSmallY=sigSmallY[where(sigSmallX gt max(sigX)+ceil((max(sigX)-min(sigX))*1.3))] ;Only select small streak pixels which are right of large streak
+    sigSmallX=sigSmallX[where(sigSmallX gt max(sigX)+ceil((max(sigX)-min(sigX))*1.3))]
     
     sigArr=make_array(n1(img[*,0]),n1(img[0,*]))*0
     sigArr[sigX,sigY]=1
@@ -76,7 +78,7 @@ pro sizeGlares
     dGlarePx=max(midYIndsDiff)
 
     dDrop=2.*dGlarePx / (ref*cos(ang) / (1.+ref^2.-2.*ref*cos(ang))^(1./2.) + sin(ang))
-    dUm=[temporary(dUm),dDrop*2.3]
+    dUm=[temporary(dUm),dDrop*umToPx]
 
     if test eq 1 then begin
       s1=scatterplot(sigx+1.5,sigy+1.5,symbol='.',sym_size=2,sym_color='red',/overplot)
@@ -91,6 +93,11 @@ pro sizeGlares
 
   ;----------------------SHOW RESULTS--------------------------
   h1=hist(dum)
+  h1.font_size=22
+  h1.xrange=[2,50]
+  ;h1.xminor=0
+  h1.xmajor=13
+  
   print,dum
   
 end

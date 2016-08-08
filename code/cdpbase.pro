@@ -52,7 +52,7 @@ pro cdpBase,file=file,filter=filter
     y=strsplit(x[2],/extract,'.')
     savename='saves/'+y[0]+'.sav'
   endif else begin
-    data=read_csv('data/CDP_20160728_153816.csv')
+    data=read_csv('data/CDP_20160804_205948.csv')
   endelse
   
   
