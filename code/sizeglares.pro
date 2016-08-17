@@ -3,7 +3,7 @@ pro sizeGlares
   
   ;--------------PATH--------------------
   ;dirpath='../images/30umTest080416B/75000' ; Path to dir containing streaks
-  dirpath='../images/30umTest080416B/2000/' ; Path to dir containing streaks
+  dirpath='../images/30umTest080416B/1000/' ; Path to dir containing streaks
   ;dirpath=dialog_pickfile(/read)
   
   ;--------------OPTIONS-------------------
@@ -81,10 +81,10 @@ pro sizeGlares
     dUm=[temporary(dUm),dDrop*umToPx]
 
     if test eq 1 then begin
-      s1=scatterplot(sigx+1.5,sigy+1.5,symbol='.',sym_size=2,sym_color='red',/overplot)
-      s1=scatterplot(sigsmallx+1.5,sigsmally+1.5,symbol='.',sym_size=2,sym_color='green',/overplot)
-      s1.xrange=[0,767]
-      s1.yrange=[0,592]
+      s1=scatterplot(sigx+1.,sigy+1.5,symbol='square',sym_size=1.5,sym_color='red',/overplot,sym_transparency=70)
+      s1=scatterplot(sigsmallx+1.,sigsmally+1.5,symbol='square',sym_size=1.5,sym_color='red',/overplot,sym_transparency=70)
+      ;s1.xrange=[0,767]
+      ;s1.yrange=[0,592]
       p1=plot([0,767],[midY,midY],'g',/overplot)
     endif
   endfor

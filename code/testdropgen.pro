@@ -176,3 +176,45 @@ pro vBin
   s2=scatterplot(varX,q3Counts,sym_color='red',/overplot)
   s3=scatterplot(varX,q1Counts,sym_color='red',/overplot)
 end
+
+
+
+
+
+pro rPlan
+  input=test5PsiVals()
+  files=input.(0)
+  files=strsplit(files,'_',/extract)
+  files=files.toarray()
+  files=files[*,2]
+
+  height=input.(1)
+  pres=input.(2)
+
+
+
+  medCounts=[]
+  q1Counts=[]
+  q3Counts=[]
+  binNMedB=[]
+  varYB=[]
+  countErr=[]
+  for i=0,n(files) do begin
+    restore,file='saves/'+files[i]+'.sav'
+
+    varY=mean(binnsum)/60.-1.
+
+    q1Counts=[q1Counts,q1(abs(binnsecsum/60.-1.))]
+    q3Counts=[q3Counts,q3(abs(binnsecsum/60.-1.))]
+    medCounts=[medCounts,med(abs(binnsecsum/60.-1.))]
+    binNMedB=[binNMedB,binNMed]
+    varYB=[varYB,VarY]
+    countErr=[countErr,mean(abs(binnsecsum)/60.-1.)]
+  endfor
+  
+  varX=binNMedB
+  varY=medCounts
+  s10=scatterplot(varX,VarY,dimensions=[1200,1000])
+  s2=scatterplot(varX,q3Counts,/overplot)
+  s3=scatterplot(varX,q1Counts,/overplot)
+end
