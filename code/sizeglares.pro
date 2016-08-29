@@ -3,7 +3,7 @@ pro sizeGlares
   
   ;--------------PATH--------------------
   ;dirpath='../images/30umTest080416B/75000' ; Path to dir containing streaks
-  dirpath='../images/30umTest080416B/1000/' ; Path to dir containing streaks
+  dirpath='../images/30umTest080416A/1000/' ; Path to dir containing streaks
   ;dirpath=dialog_pickfile(/read)
   
   ;--------------OPTIONS-------------------
@@ -97,6 +97,8 @@ pro sizeGlares
   h1.xrange=[2,50]
   ;h1.xminor=0
   h1.xmajor=13
+  h1.ymajor=9
+
   
   print,dum
   
