@@ -23,9 +23,9 @@ height=[22.7,20.8,18.4,16.,14.,12.]
 pres=[5.,5.,5.,5.,5.,5.]
 
 ;---------------------FOR 30 UM 7 PSI TESTS ON 07/31/16 VARIABLE HEIGHT----------------------------
-files=['CDP_20160804_203333'] ;5 psi variable height
-height=[16.7]
-pres=[7.]
+;files=['CDP_20160804_203333'] ;5 psi variable height
+;height=[16.7]
+;pres=[7.]
 
 
 
@@ -122,16 +122,16 @@ pro vSecCounts
     
     q1Counts=[q1Counts,q1(countErr)]
     q3Counts=[q3Counts,q3(countErr)]
-    medCounts=[medCounts,mean(countErr)]
+    medCounts=[medCounts,med(countErr)]
     binNMedB=[binNMedB,binNMed]
     varYB=[varYB,VarY]
   endfor
   
   s10=scatterplot(varX,binNMedB)
   
-  s1=scatterplot(varX,medCounts,sym_color='blue',sym_filled=1,symbol='plus',sym_size=2.5)
-  s2=scatterplot(varX,q3Counts,sym_color='red',/overplot,symbol='plus',sym_size=2)
-  s3=scatterplot(varX,q1Counts,sym_color='red',/overplot,symbol='plus',sym_size=2)
+  s1=scatterplot(binNMedB,medCounts,sym_color='blue',sym_filled=1,sym_size=2.5)
+  s2=scatterplot(binNMedB,q3Counts,sym_color='red',/overplot,symbol='plus',sym_size=2,sym_thick=2)
+  s3=scatterplot(binNMedB,q1Counts,sym_color='red',/overplot,symbol='plus',sym_size=2,sym_thick=2)
   s3.font_size=22
 end
 
