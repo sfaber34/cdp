@@ -1,0 +1,2230 @@
+09/22/2016 22:35:40.790	250001	Verbose	SetupDiEnumDeviceInterfaces: \\?\hid#vid_413c&pid_2105#6&3c35484&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030} - HID Keyboard Device
+
+09/22/2016 22:35:41.055	250001	Verbose	SetupDiEnumDeviceInterfaces: \\?\hid#vid_413c&pid_3012#6&148fbad5&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030} - HID-compliant mouse
+
+09/22/2016 22:35:41.093	250002	Verbose	HidDevice() Attributes: HID Keyboard Device: Dell USB Keyboard
+
+09/22/2016 22:35:41.097	250002	Verbose	HidDevice() Capabilities: HID Keyboard Device: No available controls
+
+09/22/2016 22:35:41.117	250002	Verbose	HidDevice() Attributes: HID-compliant mouse: Dell USB Optical Mouse
+
+09/22/2016 22:35:41.123	250002	Verbose	HidDevice() Capabilities: HID-compliant mouse: 2, 1, (3, 3)
+
+09/22/2016 22:35:41.706	100013	Verbose	Opening Device Collection
+
+09/22/2016 22:35:41.709	100014	Verbose	Create Device: 70868919
+
+09/22/2016 22:35:41.754	70868919	Verbose	Processing Message: 
+	Value:	::Homed
+
+09/22/2016 22:35:41.754	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:35:41.755	70868919	Verbose	Processing Message: 
+	Value:	::Homed
+
+09/22/2016 22:35:41.755	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:35:41.755	70868919	Verbose	Processing Message: 
+	Value:	::Homed
+
+09/22/2016 22:35:41.755	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:35:41.760	1131	Information	Loading Device Settings List
+	Value:	Success
+
+09/22/2016 22:35:41.760	1130	Information	Loading Device Settings List
+	Value:	Failed to find SettingsCollection/Device node
+
+09/22/2016 22:35:41.760	1146	Verbose	RegisterDeviceSettingsFactory
+
+09/22/2016 22:35:41.760	1111	Information	Loading Device Configurations
+	Device:	General
+
+09/22/2016 22:35:41.760	1110	Information	Reading Device Configurations
+	Device:	General
+
+09/22/2016 22:35:41.760	1120	Information	Loaded General Settings
+	OutputDebugMask:	7
+	OutputLogMask:	31
+
+09/22/2016 22:35:41.761	1111	Information	Loading Device Configurations
+	Device:	70868919
+
+09/22/2016 22:35:41.761	1110	Information	Reading Device Configurations
+	Device:	70868919
+
+09/22/2016 22:35:41.761	1100	Information	Loaded Device Settings
+	CollateLogging:	0
+	MustUseDeviceUnits:	1
+	OutputDebugMask:	7
+	OutputLogMask:	31
+	SettingsName:	Default
+
+09/22/2016 22:35:41.761	1112	Information	Storing Device Configurations
+	Device:	70868919
+
+09/22/2016 22:35:41.761	1100	Information	Loaded Device Settings
+	CollateLogging:	0
+	MustUseDeviceUnits:	0
+	OutputDebugMask:	7
+	OutputLogMask:	31
+	SettingsName:	HS 17DRV014 50mm
+
+09/22/2016 22:35:41.761	1112	Information	Storing Device Configurations
+	Device:	70868919-1
+
+09/22/2016 22:35:41.761	1146	Verbose	RegisterDeviceSettingsFactory
+
+09/22/2016 22:35:41.761	1100	Information	Loaded Device Settings
+	CollateLogging:	0
+	MustUseDeviceUnits:	0
+	OutputDebugMask:	7
+	OutputLogMask:	31
+	SettingsName:	HS 17DRV014 50mm
+
+09/22/2016 22:35:41.761	1112	Information	Storing Device Configurations
+	Device:	70868919-2
+
+09/22/2016 22:35:41.770	1146	Verbose	RegisterDeviceSettingsFactory
+
+09/22/2016 22:35:41.770	1111	Information	Loading Device Configurations
+	Device:	70868919-3
+
+09/22/2016 22:35:41.770	1110	Information	Reading Device Configurations
+	Device:	70868919-3
+
+09/22/2016 22:35:41.771	1100	Information	Loaded Device Settings
+	CollateLogging:	0
+	MustUseDeviceUnits:	1
+	OutputDebugMask:	7
+	OutputLogMask:	31
+	SettingsName:	Default
+
+09/22/2016 22:35:41.771	1112	Information	Storing Device Configurations
+	Device:	70868919-3
+
+09/22/2016 22:35:41.792	70868919	Verbose	LoadDevice Success
+	Device:	70868919
+	Handle:	0BD40850
+
+09/22/2016 22:35:42.416	70868919	Verbose	TLI_REPLY_HARDWARE_INFO received
+	Device Type:	32
+	Firmware Version:	131841
+	Hardware Version:	2
+	Mod State:	0
+	Model Number:	BSC203 
+	Notes:	APT Stepper Motor Controller
+	Number of Channels:	3
+	Serial Number:	0
+
+09/22/2016 22:35:42.416	70868919	Information	Request Settings Initialization
+
+09/22/2016 22:35:42.416	70868919	Verbose	Requst Rack Bay State
+
+09/22/2016 22:35:42.416	70868919	Verbose	Requst Rack Bay State
+
+09/22/2016 22:35:42.416	70868919	Verbose	Requst Rack Bay State
+
+09/22/2016 22:35:42.428	70868919	Verbose	RACK_REPLY_BAYUSED Received
+	Bay State:	1
+	Channel:	1
+
+09/22/2016 22:35:42.428	70868919	Verbose	RACK_REPLY_BAYUSED Received
+	Bay State:	1
+	Channel:	2
+
+09/22/2016 22:35:42.428	70868919	Verbose	RACK_REPLY_BAYUSED Received
+	Bay State:	2
+	Channel:	3
+
+09/22/2016 22:35:42.460	70868919	Verbose	TLI_REPLY_HARDWARE_INFO received
+	Device Type:	16
+	Firmware Version:	196613
+	Hardware Version:	3
+	Mod State:	1
+	Model Number:	SCC201
+	Notes:	APT Stepper Controller
+	Number of Channels:	1
+	Serial Number:	0
+
+09/22/2016 22:35:42.522	70868919	Verbose	MOTOR_INPUT_VOLTAGE info received
+	Input Voltage 1:	872
+
+09/22/2016 22:35:42.522	70868919	Verbose	MOTOR_REQ_REL_MOVE_PARS info received
+	Distance:	819200
+
+09/22/2016 22:35:42.522	70868919	Verbose	MOTOR_REQ_MOVE_ABS_PARS info received
+	Position:	0
+
+09/22/2016 22:35:42.522	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 819200
+
+09/22/2016 22:35:42.522	70868919	Verbose	TLI_REPLY_HARDWARE_INFO received
+	Device Type:	16
+	Firmware Version:	196613
+	Hardware Version:	3
+	Mod State:	1
+	Model Number:	SCC201
+	Notes:	APT Stepper Controller
+	Number of Channels:	1
+	Serial Number:	0
+
+09/22/2016 22:35:42.589	70868919	Information	Settings Initialized
+
+09/22/2016 22:35:42.589	70868919	Verbose	MOTOR_INPUT_VOLTAGE info received
+	Input Voltage 1:	840
+
+09/22/2016 22:35:42.589	70868919	Verbose	MOTOR_REQ_REL_MOVE_PARS info received
+	Distance:	-409600
+
+09/22/2016 22:35:42.589	70868919	Verbose	MOTOR_REQ_MOVE_ABS_PARS info received
+	Position:	20480000
+
+09/22/2016 22:35:42.589	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 19660800
+
+09/22/2016 22:35:42.616	70868919	Information	Settings Initialized
+
+09/22/2016 22:35:42.626	1135	Information	Reading Settings
+	Value:	HS 17DRV014 50mm
+
+09/22/2016 22:35:42.626	1132	Information	Loading Device Settings List
+	Value:	HS 17DRV014 50mm
+
+09/22/2016 22:35:42.627	1134	Information	Loaded Device Settings
+	ActionMode:	16
+	AxisID:	2
+	BacklashDist:	0.01
+	BowIndex:	0
+	ButtonMode:	0
+	ButtonPos1:	0
+	ButtonPos2:	0
+	CCWHardLimit:	3
+	CCWSoftLimit:	1
+	CWHardLimit:	3
+	CWSoftLimit:	3
+	DefAccn:	20
+	DefMaxVel:	20
+	DefMinVel:	0
+	DirSense:	1
+	DirectionSense:	1
+	Enabled:	0
+	Encoder1uStepWnd:	10
+	EncoderCalib:	0
+	EncoderCalibDwell:	0
+	EncoderCalibStep:	0.1
+	EncoderCorrMove:	2
+	EncoderFitted:	0
+	EncoderQEPSense:	-1
+	EncoderSetpointWnd:	2
+	EncoderStopShort:	50
+	Factor:	1
+	FlashLEDIdent:	1
+	FlashLEDLimitSwitch:	1
+	GearboxRatio:	1
+	HighGearAccn:	50
+	HighGearMaxVel:	10
+	HomeDir:	2
+	HomeLimitSwitch:	1
+	HomeVel:	1
+	HomeZeroOffset:	0.1
+	IlluminateLEDMove:	1
+	JogAccn:	0.5
+	JogMaxVel:	1
+	JogMinVel:	0
+	JogMode:	2
+	JogStepSize:	0.5
+	JogStopMode:	2
+	LimitsSoftwareApproachPolicy:	0
+	LowGearAccn:	1000
+	LowGearMaxVel:	1
+	MaxAccn:	50
+	MaxPos:	50
+	MaxVel:	50
+	MinPos:	0
+	MoveFactor:	30
+	MoveRelativeTarget:	0.1
+	MoveToTarget:	0
+	MovementDirection:	0
+	MovementMode:	0
+	PID Loop Encoder Calibration Coeff:	0
+	Path:	
+	Pitch:	1
+	RestFactor:	15
+	SoftLimitMode:	1
+	StageID:	67
+	StepsPerRev:	200
+	TriggerEnable:	0
+	Units:	1
+	UnitsTxt:	mm
+	UseDeviceUnits:	0
+	Velocity1:	5
+	Velocity2:	10
+	Velocity3:	15
+	Velocity4:	20
+
+09/22/2016 22:35:42.627	1150	Information	Override Settings node found
+	Device ID:	70
+	Device Settings Name:	HS 17DRV014 50mm
+	Serial Number:	70868919-1
+
+09/22/2016 22:35:42.640	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	90121
+	m_velParams.maxVelocity:	439746560
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:35:42.665	1135	Information	Reading Settings
+	Value:	HS 17DRV014 50mm
+
+09/22/2016 22:35:42.665	1132	Information	Loading Device Settings List
+	Value:	HS 17DRV014 50mm
+
+09/22/2016 22:35:42.665	1134	Information	Loaded Device Settings
+	ActionMode:	16
+	AxisID:	2
+	BacklashDist:	0.01
+	BowIndex:	0
+	ButtonMode:	0
+	ButtonPos1:	0
+	ButtonPos2:	0
+	CCWHardLimit:	3
+	CCWSoftLimit:	1
+	CWHardLimit:	3
+	CWSoftLimit:	3
+	DefAccn:	20
+	DefMaxVel:	20
+	DefMinVel:	0
+	DirSense:	1
+	DirectionSense:	1
+	Enabled:	0
+	Encoder1uStepWnd:	10
+	EncoderCalib:	0
+	EncoderCalibDwell:	0
+	EncoderCalibStep:	0.1
+	EncoderCorrMove:	2
+	EncoderFitted:	0
+	EncoderQEPSense:	-1
+	EncoderSetpointWnd:	2
+	EncoderStopShort:	50
+	Factor:	1
+	FlashLEDIdent:	1
+	FlashLEDLimitSwitch:	1
+	GearboxRatio:	1
+	HighGearAccn:	50
+	HighGearMaxVel:	10
+	HomeDir:	2
+	HomeLimitSwitch:	1
+	HomeVel:	1
+	HomeZeroOffset:	0.1
+	IlluminateLEDMove:	1
+	JogAccn:	0.5
+	JogMaxVel:	1
+	JogMinVel:	0
+	JogMode:	2
+	JogStepSize:	0.5
+	JogStopMode:	2
+	LimitsSoftwareApproachPolicy:	0
+	LowGearAccn:	1000
+	LowGearMaxVel:	1
+	MaxAccn:	50
+	MaxPos:	50
+	MaxVel:	50
+	MinPos:	0
+	MoveFactor:	30
+	MoveRelativeTarget:	0.1
+	MoveToTarget:	0
+	MovementDirection:	0
+	MovementMode:	0
+	PID Loop Encoder Calibration Coeff:	0
+	Path:	
+	Pitch:	1
+	RestFactor:	15
+	SoftLimitMode:	1
+	StageID:	67
+	StepsPerRev:	200
+	TriggerEnable:	0
+	Units:	1
+	UnitsTxt:	mm
+	UseDeviceUnits:	0
+	Velocity1:	5
+	Velocity2:	10
+	Velocity3:	15
+	Velocity4:	20
+
+09/22/2016 22:35:42.665	1150	Information	Override Settings node found
+	Device ID:	70
+	Device Settings Name:	HS 17DRV014 50mm
+	Serial Number:	70868919-2
+
+09/22/2016 22:35:42.666	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	90121
+	m_velParams.maxVelocity:	439746560
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:35:42.740	70868919	Information	Set Jog Parameters
+	m_jogParams.mode:	2
+	m_jogParams.stepSize:	204800
+	m_jogParams.stopMode:	2
+	m_jogParams.velParams.acceleration:	2253
+	m_jogParams.velParams.maxVelocity:	21987328
+	m_jogParams.velParams.minVelocity:	0
+
+09/22/2016 22:35:42.766	70868919	Information	Set Jog Parameters
+	m_jogParams.mode:	2
+	m_jogParams.stepSize:	204800
+	m_jogParams.stopMode:	2
+	m_jogParams.velParams.acceleration:	2253
+	m_jogParams.velParams.maxVelocity:	21987328
+	m_jogParams.velParams.minVelocity:	0
+
+09/22/2016 22:35:42.774	100003	Verbose	Application Started
+
+09/22/2016 22:35:42.840	70868919	Verbose	Update Limits Software Approach Policy
+	Limits Software Approach Policy:	0
+	Maximum Limit:	2147483647
+	Minimum Limit:	-2147483648
+
+09/22/2016 22:35:42.866	70868919	Verbose	Update Limits Software Approach Policy
+	Limits Software Approach Policy:	0
+	Maximum Limit:	2147483647
+	Minimum Limit:	-2147483648
+
+09/22/2016 22:35:42.940	70868919	Verbose	Update Motor Position Limits
+	Limits Software Approach Policy:	0
+	Maximum Limit:	20480000
+	Minimum Limit:	0
+
+09/22/2016 22:35:42.940	70868919	Information	Set Power Parameters
+	m_powerParams.movePercentage:	30
+	m_powerParams.restPercentage:	15
+
+09/22/2016 22:35:42.940	70868919	Information	Set bow index
+	bowIndex:	0
+
+09/22/2016 22:35:42.941	70868919	Information	Set Trigger Switches
+	bIndicatorBits:	16
+
+09/22/2016 22:35:42.942	70868919	Information	Set Move Absolute Position
+	Position:	0
+
+09/22/2016 22:35:42.943	70868919	Information	Set Move Relative Distance
+	Distance:	40960
+
+09/22/2016 22:35:42.944	70868919	Verbose	Motor Response: 
+	Value:	Motor LimitChanged: size = 0,20480000
+
+09/22/2016 22:35:42.946	70868919	Verbose	Motor Response: 
+	Value:	Motor LimitChanged: size = 0,20480000
+
+09/22/2016 22:35:42.966	70868919	Verbose	Update Motor Position Limits
+	Limits Software Approach Policy:	0
+	Maximum Limit:	20480000
+	Minimum Limit:	0
+
+09/22/2016 22:35:42.966	70868919	Information	Set Power Parameters
+	m_powerParams.movePercentage:	30
+	m_powerParams.restPercentage:	15
+
+09/22/2016 22:35:42.966	70868919	Information	Set bow index
+	bowIndex:	0
+
+09/22/2016 22:35:42.967	70868919	Information	Set Trigger Switches
+	bIndicatorBits:	16
+
+09/22/2016 22:35:42.968	70868919	Information	Set Move Absolute Position
+	Position:	0
+
+09/22/2016 22:35:42.969	70868919	Information	Set Move Relative Distance
+	Distance:	40960
+
+09/22/2016 22:35:42.970	70868919	Verbose	Motor Response: 
+	Value:	Motor LimitChanged: size = 0,20480000
+
+09/22/2016 22:35:42.970	70868919	Verbose	Motor Response: 
+	Value:	Motor LimitChanged: size = 0,20480000
+
+09/22/2016 22:35:43.187	100015	Verbose	Opened  Device Collection
+
+09/22/2016 22:35:47.628	70868919	Verbose	AddMessage: MoveTo
+	Position:	20480000
+
+09/22/2016 22:35:47.629	70868919	Verbose	Processing Message: 
+	Value:	::MoveTo
+
+09/22/2016 22:35:47.629	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:35:47.629	70868919	Verbose	Calibration Applied
+	Calibrated Position:	20480000
+	Original Position:	20480000
+
+09/22/2016 22:35:47.629	70868919	Information	MoveToPosition Requested
+	Position:	20480000
+
+09/22/2016 22:35:47.784	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 887271, Moving
+
+09/22/2016 22:35:48.034	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 1407722, Moving
+
+09/22/2016 22:35:48.285	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 2441084, Moving
+
+09/22/2016 22:35:48.536	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 3993915, Moving
+
+09/22/2016 22:35:48.787	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 5991647, Moving
+
+09/22/2016 22:35:49.038	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8047284, Moving
+
+09/22/2016 22:35:49.289	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10103576, Moving
+
+09/22/2016 22:35:49.540	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 12159340, Moving
+
+09/22/2016 22:35:49.791	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 14215319, Moving
+
+09/22/2016 22:35:50.042	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 16270876, Moving
+
+09/22/2016 22:35:50.233	70868919	Verbose	AddMessage: MoveTo
+	Position:	0
+
+09/22/2016 22:35:50.234	70868919	Verbose	Processing Message: 
+	Value:	::MoveTo
+
+09/22/2016 22:35:50.234	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:35:50.234	70868919	Verbose	Calibration Applied
+	Calibrated Position:	0
+	Original Position:	0
+
+09/22/2016 22:35:50.234	70868919	Information	MoveToPosition Requested
+	Position:	0
+
+09/22/2016 22:35:50.293	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19656788, Moving
+
+09/22/2016 22:35:50.293	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 18101737, Moving
+
+09/22/2016 22:35:50.544	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19334343, Moving
+
+09/22/2016 22:35:50.544	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 19407573, Moving
+
+09/22/2016 22:35:50.795	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 18495536, Moving
+
+09/22/2016 22:35:50.795	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20202026, Moving
+
+09/22/2016 22:35:51.046	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 17139513, Moving
+
+09/22/2016 22:35:51.046	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20479625, Moving
+
+09/22/2016 22:35:51.297	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 15272354, Moving
+
+09/22/2016 22:35:51.297	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20480000
+
+09/22/2016 22:35:51.299	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:35:51.299	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:35:51.548	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 13216617, Moving
+
+09/22/2016 22:35:51.799	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11152823, Moving
+
+09/22/2016 22:35:52.049	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9105039, Moving
+
+09/22/2016 22:35:52.300	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 7057223, Moving
+
+09/22/2016 22:35:52.550	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 5009723, Moving
+
+09/22/2016 22:35:52.800	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 3039260, Moving
+
+09/22/2016 22:35:53.049	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 1529160, Moving
+
+09/22/2016 22:35:53.299	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 532061, Moving
+
+09/22/2016 22:35:53.548	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 47120, Moving
+
+09/22/2016 22:35:53.798	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 0
+
+09/22/2016 22:35:53.799	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:35:53.799	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:35:57.937	100040	Information	Sequence Event:  - Set Running State
+	Current State:	Idle
+
+09/22/2016 22:36:14.898	100040	Information	Sequence Event: newSeq - Set Continuous Repeat
+	ContinuousRepeat:	False
+
+09/22/2016 22:36:14.901	100040	Information	Sequence Event: newSeq - Set Running State
+	Current State:	Working
+
+09/22/2016 22:36:14.914	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:36:14.919	70868919	Verbose	Invoke Action: : Sets Velocity Parameters
+	MaxVelocity:	10
+	Acceleration:	5
+
+09/22/2016 22:36:14.920	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	22530
+	m_velParams.maxVelocity:	219873280
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:36:14.921	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:14.921	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	1
+	Loop Number:	1
+	Step:	1
+	Name:	Event
+	Description:	yInit
+	70868919-2:	1. - SetVelocityParams 10 
+
+09/22/2016 22:36:14.923	70868919	Verbose	Invoke Action: : Performs a MoveTo command
+	MoveTo:	50
+
+09/22/2016 22:36:14.923	70868919	Verbose	AddMessage: MoveTo
+	Position:	20480000
+
+09/22/2016 22:36:14.923	70868919	Verbose	Processing Message: 
+	Value:	::MoveTo
+
+09/22/2016 22:36:14.923	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:36:14.923	70868919	Verbose	Calibration Applied
+	Calibrated Position:	20480000
+	Original Position:	20480000
+
+09/22/2016 22:36:14.923	70868919	Information	MoveToPosition Requested
+	Position:	20480000
+
+09/22/2016 22:36:14.924	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:14.924	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	1
+	Loop Number:	1
+	Step:	1
+	Name:	Event
+	Description:	yInit
+	70868919-2:	2. - MoveTo 50 
+
+09/22/2016 22:36:14.924	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:36:14.924	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	1
+	Loop Number:	1
+	Step:	1
+	Name:	Event
+	Description:	yInit
+	70868919-2:	2. - MoveTo 50 
+
+09/22/2016 22:36:15.064	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 13077, Moving
+
+09/22/2016 22:36:15.314	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 134966, Moving
+
+09/22/2016 22:36:15.563	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 384971, Moving
+
+09/22/2016 22:36:15.813	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 763158, Moving
+
+09/22/2016 22:36:16.063	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 1269214, Moving
+
+09/22/2016 22:36:16.313	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 1903724, Moving
+
+09/22/2016 22:36:16.563	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 2666019, Moving
+
+09/22/2016 22:36:16.813	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 3556541, Moving
+
+09/22/2016 22:36:17.063	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 4561504, Moving
+
+09/22/2016 22:36:17.313	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 5585706, Moving
+
+09/22/2016 22:36:17.563	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 6609323, Moving
+
+09/22/2016 22:36:17.814	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 7633190, Moving
+
+09/22/2016 22:36:18.064	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8657347, Moving
+
+09/22/2016 22:36:18.314	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9680792, Moving
+
+09/22/2016 22:36:18.564	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10704793, Moving
+
+09/22/2016 22:36:18.814	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11729103, Moving
+
+09/22/2016 22:36:19.064	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 12753323, Moving
+
+09/22/2016 22:36:19.314	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 13776738, Moving
+
+09/22/2016 22:36:19.564	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 14800941, Moving
+
+09/22/2016 22:36:19.815	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 15824549, Moving
+
+09/22/2016 22:36:20.065	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 16835749, Moving
+
+09/22/2016 22:36:20.315	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 17738091, Moving
+
+09/22/2016 22:36:20.565	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 18511807, Moving
+
+09/22/2016 22:36:20.815	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 19158037, Moving
+
+09/22/2016 22:36:21.065	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 19675964, Moving
+
+09/22/2016 22:36:21.314	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20065548, Moving
+
+09/22/2016 22:36:21.564	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20327453, Moving
+
+09/22/2016 22:36:21.815	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20461092, Moving
+
+09/22/2016 22:36:22.064	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20480000
+
+09/22/2016 22:36:22.064	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:36:22.064	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:36:22.066	70868919	Verbose	Task Completed: Performs a MoveTo command
+
+09/22/2016 22:36:22.067	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:22.067	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	1
+	Loop Number:	1
+	Step:	1
+	Name:	Event
+	Description:	yInit
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.067	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:36:22.067	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	1
+	Loop Number:	1
+	Step:	1
+	Name:	Event
+	Description:	yInit
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.075	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	Complete
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.076	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:36:22.076	70868919	Verbose	Invoke Action: : Sets Velocity Parameters
+	MaxVelocity:	10
+	Acceleration:	10
+
+09/22/2016 22:36:22.076	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	45061
+	m_velParams.maxVelocity:	219873280
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:36:22.077	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:22.077	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	Complete
+	70868919-2:	1. - SetVelocityParams 10 
+
+09/22/2016 22:36:22.078	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:22.078	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	Complete
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.078	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:36:22.078	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	Complete
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.079	70868919	Verbose	Invoke Action: : Sets Velocity Parameters
+	MaxVelocity:	10
+	Acceleration:	10
+
+09/22/2016 22:36:22.079	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	45061
+	m_velParams.maxVelocity:	219873280
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:36:22.079	70868919	Information	Settings Updated
+	ID:	ControlSettings
+	Channel:	1
+
+09/22/2016 22:36:22.081	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:36:22.081	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	1. - SetVelocityParams 10 
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.081	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:36:22.081	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	Complete
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.081	70868919	Verbose	70868919-1 - StateChange: Idle
+
+09/22/2016 22:36:22.081	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	2
+	Loop Number:	1
+	Step:	2
+	Name:	Event
+	Description:	
+	70868919-1:	Complete
+	70868919-2:	Complete
+
+09/22/2016 22:36:22.083	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	Complete
+
+09/22/2016 22:36:22.083	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:36:22.083	70868919	Verbose	Invoke Action: : Performs a MoveTo command
+	MoveTo:	0
+
+09/22/2016 22:36:22.083	70868919	Verbose	AddMessage: MoveTo
+	Position:	0
+
+09/22/2016 22:36:22.084	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:36:22.084	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	1. - MoveTo 0 
+
+09/22/2016 22:36:22.084	70868919	Verbose	70868919-1 - StateChange: WaitingOnDevice
+
+09/22/2016 22:36:22.084	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	1. - MoveTo 0 
+
+09/22/2016 22:36:22.084	70868919	Verbose	Processing Message: 
+	Value:	::MoveTo
+
+09/22/2016 22:36:22.084	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:36:22.084	70868919	Verbose	Calibration Applied
+	Calibrated Position:	0
+	Original Position:	0
+
+09/22/2016 22:36:22.084	70868919	Information	MoveToPosition Requested
+	Position:	0
+
+09/22/2016 22:36:22.315	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 20394957, Moving
+
+09/22/2016 22:36:22.565	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 20058285, Moving
+
+09/22/2016 22:36:22.815	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19465666, Moving
+
+09/22/2016 22:36:23.065	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 18616363, Moving
+
+09/22/2016 22:36:23.315	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 17596496, Moving
+
+09/22/2016 22:36:23.565	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 16572443, Moving
+
+09/22/2016 22:36:23.815	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 15548291, Moving
+
+09/22/2016 22:36:24.065	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 14520745, Moving
+
+09/22/2016 22:36:24.315	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 13492577, Moving
+
+09/22/2016 22:36:24.566	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 12464777, Moving
+
+09/22/2016 22:36:24.817	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11436171, Moving
+
+09/22/2016 22:36:25.068	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10408818, Moving
+
+09/22/2016 22:36:25.319	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9380201, Moving
+
+09/22/2016 22:36:25.570	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 8352433, Moving
+
+09/22/2016 22:36:25.821	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 7324469, Moving
+
+09/22/2016 22:36:26.072	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 6296151, Moving
+
+09/22/2016 22:36:26.323	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 5268621, Moving
+
+09/22/2016 22:36:26.575	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 4240368, Moving
+
+09/22/2016 22:36:26.824	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 3216218, Moving
+
+09/22/2016 22:36:27.075	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 2192751, Moving
+
+09/22/2016 22:36:27.325	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 1261957, Moving
+
+09/22/2016 22:36:27.575	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 584545, Moving
+
+09/22/2016 22:36:27.825	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 163442, Moving
+
+09/22/2016 22:36:28.075	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: -1446, Moving
+
+09/22/2016 22:36:28.324	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 0
+
+09/22/2016 22:36:28.326	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:36:28.326	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:36:28.327	70868919	Verbose	Task Completed: Performs a MoveTo command
+
+09/22/2016 22:36:28.327	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:36:28.327	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:36:28.327	70868919	Verbose	70868919-1 - StateChange: WaitingOnTime
+
+09/22/2016 22:36:28.327	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:36:38.341	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:36:38.341	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	Complete
+
+09/22/2016 22:36:38.342	70868919	Verbose	70868919-1 - StateChange: Idle
+
+09/22/2016 22:36:38.342	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	3
+	Loop Number:	1
+	Step:	3
+	Name:	Event
+	Description:	xInit
+	70868919-1:	Complete
+
+09/22/2016 22:36:38.342	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:36:38.343	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:36:38.343	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	2
+
+09/22/2016 22:36:38.344	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:38.345	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:36:38.345	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:36:38.345	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:36:38.344	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	4294557696
+
+09/22/2016 22:36:38.345	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:36:38.345	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:36:38.345	70868919	Verbose	Move Relative
+	Calibrated Displacement:	409600
+	Original Displacement:	-409600
+
+09/22/2016 22:36:38.575	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 20396127, Moving
+
+09/22/2016 22:36:38.825	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 20134961, Moving
+
+09/22/2016 22:36:39.075	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20070400
+
+09/22/2016 22:36:39.075	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:36:39.075	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:36:39.077	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:36:39.077	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:39.077	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:36:39.077	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:36:39.077	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:36:49.074	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:49.074	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:36:49.074	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:36:49.074	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	6
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:36:49.075	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:36:49.075	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:36:49.075	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	2
+
+09/22/2016 22:36:49.075	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:49.075	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:36:49.075	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:36:49.075	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:36:49.075	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	4294557696
+
+09/22/2016 22:36:49.076	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:36:49.076	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:36:49.076	70868919	Verbose	Move Relative
+	Calibrated Displacement:	409600
+	Original Displacement:	-409600
+
+09/22/2016 22:36:49.337	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19960922, Moving
+
+09/22/2016 22:36:49.586	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19705494, Moving
+
+09/22/2016 22:36:49.836	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 19660800
+
+09/22/2016 22:36:49.836	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:36:49.836	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:36:49.838	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:36:49.838	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:49.838	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:36:49.838	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:36:49.838	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:36:59.838	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:36:59.838	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:36:59.838	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:36:59.838	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	7
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:36:59.838	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	Complete
+
+09/22/2016 22:36:59.838	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:36:59.838	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	2
+	Direction:	1
+
+09/22/2016 22:36:59.838	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	819200
+
+09/22/2016 22:36:59.839	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:36:59.839	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:36:59.839	70868919	Verbose	70868919-1 - StateChange: WaitingOnDevice
+
+09/22/2016 22:36:59.839	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:36:59.839	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:36:59.839	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:36:59.839	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-819200
+	Original Displacement:	819200
+
+09/22/2016 22:37:00.092	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 106232, Moving
+
+09/22/2016 22:37:00.343	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 465562, Moving
+
+09/22/2016 22:37:00.595	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 763838, Moving
+
+09/22/2016 22:37:00.845	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 819200
+
+09/22/2016 22:37:00.846	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:37:00.846	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:37:00.846	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:37:00.847	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:37:00.847	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:37:00.847	70868919	Verbose	70868919-1 - StateChange: WaitingOnTime
+
+09/22/2016 22:37:00.847	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:37:10.835	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:37:10.835	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	Complete
+
+09/22/2016 22:37:10.835	70868919	Verbose	70868919-1 - StateChange: Idle
+
+09/22/2016 22:37:10.835	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	9
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	Complete
+
+09/22/2016 22:37:10.835	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:37:10.836	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:37:10.836	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	1
+
+09/22/2016 22:37:10.836	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:10.836	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:37:10.836	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:37:10.836	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:37:10.836	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	409600
+
+09/22/2016 22:37:10.837	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:37:10.837	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:37:10.837	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-409600
+	Original Displacement:	409600
+
+09/22/2016 22:37:11.098	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 19771279, Moving
+
+09/22/2016 22:37:11.348	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20024265, Moving
+
+09/22/2016 22:37:11.598	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20070400
+
+09/22/2016 22:37:11.598	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:37:11.598	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:37:11.599	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:37:11.599	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:11.600	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:11.600	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:37:11.600	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:21.600	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:21.600	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:37:21.600	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:37:21.600	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	11
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:37:21.601	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:37:21.601	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:37:21.601	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	1
+
+09/22/2016 22:37:21.601	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:21.601	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:37:21.601	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:37:21.601	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:37:21.601	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	409600
+
+09/22/2016 22:37:21.602	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:37:21.602	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:37:21.602	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-409600
+	Original Displacement:	409600
+
+09/22/2016 22:37:21.859	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20179050, Moving
+
+09/22/2016 22:37:22.109	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20432613, Moving
+
+09/22/2016 22:37:22.360	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20480000
+
+09/22/2016 22:37:22.361	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:37:22.361	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:37:22.362	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:37:22.362	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:22.362	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:22.362	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:37:22.362	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:32.349	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:32.349	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:37:32.349	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:37:32.349	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	12
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:37:32.357	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	Complete
+
+09/22/2016 22:37:32.357	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:37:32.357	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	2
+	Direction:	1
+
+09/22/2016 22:37:32.358	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:37:32.358	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	819200
+
+09/22/2016 22:37:32.358	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:37:32.358	70868919	Verbose	70868919-1 - StateChange: WaitingOnDevice
+
+09/22/2016 22:37:32.358	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:37:32.358	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:37:32.358	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:37:32.358	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-819200
+	Original Displacement:	819200
+
+09/22/2016 22:37:32.611	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 925165, Moving
+
+09/22/2016 22:37:32.861	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 1282577, Moving
+
+09/22/2016 22:37:33.111	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 1581369, Moving
+
+09/22/2016 22:37:33.361	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 1638400
+
+09/22/2016 22:37:33.362	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:37:33.362	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:37:33.362	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:37:33.363	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:37:33.363	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:37:33.364	70868919	Verbose	70868919-1 - StateChange: WaitingOnTime
+
+09/22/2016 22:37:33.364	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:37:43.377	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:37:43.377	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	Complete
+
+09/22/2016 22:37:43.377	70868919	Verbose	70868919-1 - StateChange: Idle
+
+09/22/2016 22:37:43.377	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	14
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	Complete
+
+09/22/2016 22:37:43.377	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:37:43.378	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:37:43.378	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	2
+
+09/22/2016 22:37:43.378	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:43.378	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:37:43.378	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:37:43.378	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:37:43.378	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	4294557696
+
+09/22/2016 22:37:43.378	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:37:43.378	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:37:43.378	70868919	Verbose	Move Relative
+	Calibrated Displacement:	409600
+	Original Displacement:	-409600
+
+09/22/2016 22:37:43.621	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 20387376, Moving
+
+09/22/2016 22:37:43.872	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 20127525, Moving
+
+09/22/2016 22:37:44.122	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20070400
+
+09/22/2016 22:37:44.123	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:37:44.123	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:37:44.124	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:37:44.124	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:44.124	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:44.125	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:37:44.125	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:54.111	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:54.111	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:37:54.111	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:37:54.111	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	16
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:37:54.111	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:37:54.111	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:37:54.111	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	2
+
+09/22/2016 22:37:54.112	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:54.112	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:37:54.112	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:37:54.112	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	1. - MoveRelative -1 
+
+09/22/2016 22:37:54.112	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	4294557696
+
+09/22/2016 22:37:54.112	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:37:54.112	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:37:54.112	70868919	Verbose	Move Relative
+	Calibrated Displacement:	409600
+	Original Displacement:	-409600
+
+09/22/2016 22:37:54.385	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19950714, Moving
+
+09/22/2016 22:37:54.635	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 19699030, Moving
+
+09/22/2016 22:37:54.885	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 19660800
+
+09/22/2016 22:37:54.885	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:37:54.885	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:37:54.917	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:37:54.917	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:37:54.917	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:37:54.917	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:37:54.917	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:38:04.906	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:04.906	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:38:04.906	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:38:04.906	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	17
+	Loop Number:	1
+	Step:	4.1.1
+	Name:	Event
+	Description:	legDown
+	70868919-2:	Complete
+
+09/22/2016 22:38:04.906	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	Complete
+
+09/22/2016 22:38:04.906	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:38:04.906	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	2
+	Direction:	1
+
+09/22/2016 22:38:04.906	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	819200
+
+09/22/2016 22:38:04.907	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:38:04.907	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:38:04.907	70868919	Verbose	70868919-1 - StateChange: WaitingOnDevice
+
+09/22/2016 22:38:04.907	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:38:04.907	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:38:04.907	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:38:04.907	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-819200
+	Original Displacement:	819200
+
+09/22/2016 22:38:05.136	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 1723436, Moving
+
+09/22/2016 22:38:05.386	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 2060098, Moving
+
+09/22/2016 22:38:05.636	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 2383217, Moving
+
+09/22/2016 22:38:05.886	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 2457600
+
+09/22/2016 22:38:05.887	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:38:05.887	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:38:05.888	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:38:05.888	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:38:05.888	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:38:05.889	70868919	Verbose	70868919-1 - StateChange: WaitingOnTime
+
+09/22/2016 22:38:05.889	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:38:15.904	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:38:15.904	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	Complete
+
+09/22/2016 22:38:15.904	70868919	Verbose	70868919-1 - StateChange: Idle
+
+09/22/2016 22:38:15.904	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	19
+	Loop Number:	1
+	Step:	4.3
+	Name:	Event
+	Description:	xOverA
+	70868919-1:	Complete
+
+09/22/2016 22:38:15.904	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:38:15.904	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:38:15.904	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	1
+
+09/22/2016 22:38:15.904	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:15.904	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:38:15.905	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:38:15.905	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:38:15.904	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	409600
+
+09/22/2016 22:38:15.905	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:38:15.905	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:38:15.905	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-409600
+	Original Displacement:	409600
+
+09/22/2016 22:38:16.146	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 19752021, Moving
+
+09/22/2016 22:38:16.396	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20010320, Moving
+
+09/22/2016 22:38:16.646	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20070400
+
+09/22/2016 22:38:16.646	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:38:16.646	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:38:16.648	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:38:16.648	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:16.648	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:38:16.648	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:38:16.648	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:38:26.637	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:26.637	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:38:26.637	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:38:26.637	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	21
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:38:26.637	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:38:26.637	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:38:26.637	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	1
+	Direction:	1
+
+09/22/2016 22:38:26.638	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:26.638	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:38:26.638	70868919	Verbose	70868919-2 - StateChange: WaitingOnDevice
+
+09/22/2016 22:38:26.638	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	1. - MoveRelative 1 
+
+09/22/2016 22:38:26.638	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	409600
+
+09/22/2016 22:38:26.638	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:38:26.638	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:38:26.638	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-409600
+	Original Displacement:	409600
+
+09/22/2016 22:38:26.900	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20180449, Moving
+
+09/22/2016 22:38:27.151	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 20434226, Moving
+
+09/22/2016 22:38:27.402	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 20480000
+
+09/22/2016 22:38:27.402	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:38:27.402	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:38:27.403	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:38:27.403	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:27.404	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:38:27.404	70868919	Verbose	70868919-2 - StateChange: WaitingOnTime
+
+09/22/2016 22:38:27.404	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	2. - Wait 00:10.000
+
+09/22/2016 22:38:37.400	70868919	Verbose	70868919-2 - StateChange: Working
+
+09/22/2016 22:38:37.400	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:38:37.400	70868919	Verbose	70868919-2 - StateChange: Idle
+
+09/22/2016 22:38:37.400	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	22
+	Loop Number:	1
+	Step:	4.4.1
+	Name:	Event
+	Description:	legUp
+	70868919-2:	Complete
+
+09/22/2016 22:38:37.400	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	Complete
+
+09/22/2016 22:38:37.400	0	Verbose	Sequencer - StateChange: Working
+
+09/22/2016 22:38:37.400	70868919	Verbose	Invoke Action: : Performs a MoveRelative command
+	Step:	2
+	Direction:	1
+
+09/22/2016 22:38:37.401	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:38:37.401	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:38:37.401	70868919	Verbose	70868919-1 - StateChange: WaitingOnDevice
+
+09/22/2016 22:38:37.401	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	1. - MoveRelative 2 
+
+09/22/2016 22:38:37.401	70868919	Verbose	AddMessage: MoveRelative
+	Step Size:	819200
+
+09/22/2016 22:38:37.401	70868919	Verbose	Processing Message: 
+	Value:	::MoveRelative
+
+09/22/2016 22:38:37.401	70868919	Verbose	Changing State: 
+	Value:	MovingState
+
+09/22/2016 22:38:37.401	70868919	Verbose	Move Relative
+	Calibrated Displacement:	-819200
+	Original Displacement:	819200
+
+09/22/2016 22:38:37.657	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 2567416, Moving
+
+09/22/2016 22:38:37.907	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 2927859, Moving
+
+09/22/2016 22:38:38.157	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 3222562, Moving
+
+09/22/2016 22:38:38.407	70868919	Verbose	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 3276800
+
+09/22/2016 22:38:38.409	70868919	Verbose	Processing Message: 
+	Value:	::Moved
+
+09/22/2016 22:38:38.409	70868919	Verbose	Changing State: 
+	Value:	IdleState
+
+09/22/2016 22:38:38.409	70868919	Verbose	Task Completed: Performs a MoveRelative command
+
+09/22/2016 22:38:38.409	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:38:38.410	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:38:38.410	70868919	Verbose	70868919-1 - StateChange: WaitingOnTime
+
+09/22/2016 22:38:38.410	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	2. - Wait 00:10.000
+
+09/22/2016 22:38:48.399	70868919	Verbose	70868919-1 - StateChange: Working
+
+09/22/2016 22:38:48.399	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	Complete
+
+09/22/2016 22:38:48.399	70868919	Verbose	70868919-1 - StateChange: Idle
+
+09/22/2016 22:38:48.399	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	24
+	Loop Number:	1
+	Step:	4.6
+	Name:	Event
+	Description:	xOverB
+	70868919-1:	Complete
+
+09/22/2016 22:38:48.400	100040	Information	Sequence Event: newSeq - Process Event
+	Step Number:	1
+	Loop Number:	2
+	Step:	1
+	Name:	Event
+	Description:	yInit
+	70868919-2:	Complete
+
+09/22/2016 22:38:48.400	100040	Information	Sequence Event: newSeq - Set Running State
+	Current State:	Idle
+
+09/22/2016 22:38:48.401	70868919	Information	Settings Updated
+	ID:	ControlSettings
+	Channel:	1
+
+09/22/2016 22:38:48.401	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	90121
+	m_velParams.maxVelocity:	439746560
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:38:48.403	70868919	Information	Settings Updated
+	ID:	JogSettings
+	Channel:	1
+
+09/22/2016 22:38:48.403	70868919	Information	Set Jog Parameters
+	m_jogParams.mode:	2
+	m_jogParams.stepSize:	204800
+	m_jogParams.stopMode:	2
+	m_jogParams.velParams.acceleration:	2253
+	m_jogParams.velParams.maxVelocity:	21987328
+	m_jogParams.velParams.minVelocity:	0
+
+09/22/2016 22:38:48.404	70868919	Information	Set Velocity Parameters
+	m_velParams.acceleration:	90121
+	m_velParams.maxVelocity:	439746560
+	m_velParams.minVelocity:	0
+
+09/22/2016 22:38:48.404	70868919	Information	Set Jog Parameters
+	m_jogParams.mode:	2
+	m_jogParams.stepSize:	204800
+	m_jogParams.stopMode:	2
+	m_jogParams.velParams.acceleration:	2253
+	m_jogParams.velParams.maxVelocity:	21987328
+	m_jogParams.velParams.minVelocity:	0
+
+09/22/2016 22:38:48.405	0	Verbose	Sequencer - StateChange: Idle
+
+09/22/2016 22:38:57.364	100010	Information	Closed 70868919-1
+
+09/22/2016 22:38:57.364	100010	Information	Closed 70868919-2
+
+09/22/2016 22:38:57.365	70868919	Verbose	Disconnect
+
+09/22/2016 22:38:57.719	100011	Information	Closed 70868919-1
+
+09/22/2016 22:38:57.720	100011	Information	Closed 70868919-2
+

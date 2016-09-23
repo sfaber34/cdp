@@ -1,0 +1,873 @@
+18:12:55.433 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:12:55.433 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:12:55.433 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:12:55.433 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:12:55.433 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:12:55.674 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 12192498, Moving
+18:12:55.924 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11933295, Moving
+18:12:56.174 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11878400
+18:12:56.174 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:12:56.174 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:12:56.175 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:12:56.175 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:56.176 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:12:57.179 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:57.179 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:12:57.179 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:12:57.179 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:12:57.180 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:57.180 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:12:57.180 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:12:57.180 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:12:57.180 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:12:57.180 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:12:57.423 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11780391, Moving
+18:12:57.674 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11521593, Moving
+18:12:57.925 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11468800
+18:12:57.926 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:12:57.926 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:57.926 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:12:57.925 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:12:57.925 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:12:58.926 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:58.926 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:12:58.926 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:12:58.926 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:12:58.927 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:58.927 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:12:58.927 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:12:58.927 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:12:58.927 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:12:58.927 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:12:59.180 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11362467, Moving
+18:12:59.431 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11105391, Moving
+18:12:59.682 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11059200
+18:12:59.683 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:12:59.683 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:12:59.683 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:12:59.683 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:12:59.683 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:00.689 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:00.689 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:00.689 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:00.690 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:00.690 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:00.690 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:00.690 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:00.690 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:00.690 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:00.690 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:00.935 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10960343, Moving
+18:13:01.185 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10701876, Moving
+18:13:01.435 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10649600
+18:13:01.436 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:01.436 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:01.437 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:01.436 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:01.436 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:02.436 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:02.436 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:02.436 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:02.437 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:02.437 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:02.437 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:02.437 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:02.437 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:02.437 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:02.437 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:02.685 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10547971, Moving
+18:13:02.934 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10290060, Moving
+18:13:03.184 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10240000
+18:13:03.185 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:03.185 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:03.186 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:03.186 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:03.186 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:04.199 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:04.199 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:04.199 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:04.199 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:04.200 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:04.200 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:04.200 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:04.200 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:04.200 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:04.200 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:04.434 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10149843, Moving
+18:13:04.684 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9889577, Moving
+18:13:04.934 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9830400
+18:13:04.942 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:04.942 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:04.942 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:04.935 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:04.935 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:05.947 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:05.947 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:05.947 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:05.947 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:05.948 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:05.948 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:05.948 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:05.948 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:05.948 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:05.948 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:06.185 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9737710, Moving
+18:13:06.435 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9477874, Moving
+18:13:06.686 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9420800
+18:13:06.688 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:06.688 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:06.688 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:06.687 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:06.687 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:07.694 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:07.694 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:07.694 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:07.694 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:07.695 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:07.695 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:07.695 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:07.695 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:07.695 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:07.695 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:07.936 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9325422, Moving
+18:13:08.186 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9066138, Moving
+18:13:08.436 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9011200
+18:13:08.438 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:08.438 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:08.438 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:08.437 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:08.437 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:09.441 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:09.441 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:09.441 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:09.442 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:09.442 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:09.442 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:09.442 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:09.442 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:09.442 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:09.442 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:09.685 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 8913208, Moving
+18:13:09.935 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 8654436, Moving
+18:13:10.185 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 8601600
+18:13:10.186 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:10.186 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:10.186 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:10.186 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:10.187 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:11.188 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:11.188 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:11.188 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:11.189 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 0.5
+ 	Direction = 1
+18:13:11.189 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:11.189 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnDevice
+18:13:11.189 	Diagnostic 	70868919-1 	AddMessage: MoveRelative 	Step Size = 204800
+18:13:11.189 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::MoveRelative
+18:13:11.189 	Diagnostic 	70868919-1 	Changing State:  	Value = MovingState
+18:13:11.189 	Diagnostic 	70868919-1 	Move Relative
+ 	Calibrated Displacement = -204800
+ 	Original Displacement = 204800
+18:13:11.436 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 7467082, Moving
+18:13:11.686 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 7577600
+18:13:11.686 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::Moved
+18:13:11.686 	Diagnostic 	70868919-1 	Changing State:  	Value = IdleState
+18:13:11.687 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:11.687 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:11.688 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnTime
+18:13:12.701 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:12.701 	Diagnostic 	70868919 	70868919-1 - StateChange: Idle
+18:13:12.701 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:12.702 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:12.702 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:12.702 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:12.702 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:12.702 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:12.702 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:12.702 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:12.936 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8690741, Moving
+18:13:13.186 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8949377, Moving
+18:13:13.436 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9011200
+18:13:13.437 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:13.437 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:13.438 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:13.436 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:13.436 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:14.449 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:14.449 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:14.450 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:14.450 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:14.450 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:14.450 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:14.450 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:14.450 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:14.450 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:14.450 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:14.686 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9101997, Moving
+18:13:14.935 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9360223, Moving
+18:13:15.186 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9420800
+18:13:15.186 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:15.186 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:15.187 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:15.187 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:15.187 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:16.195 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:16.195 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:16.195 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:16.196 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:16.196 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:16.196 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:16.196 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:16.196 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:16.196 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:16.196 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:16.441 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9519654, Moving
+18:13:16.692 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9776868, Moving
+18:13:16.943 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9830400
+18:13:16.944 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:16.944 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:16.944 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:16.943 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:16.943 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:17.958 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:17.958 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:17.958 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:17.958 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:17.959 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:17.959 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:17.958 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:17.959 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:17.959 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:17.959 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:18.197 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9923067, Moving
+18:13:18.447 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10181064, Moving
+18:13:18.697 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10240000
+18:13:18.698 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:18.698 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:18.698 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:18.698 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:18.698 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:19.705 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:19.705 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:19.705 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:19.706 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:19.706 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:19.706 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:19.706 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:19.706 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:19.706 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:19.706 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:19.947 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10335274, Moving
+18:13:20.196 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10592738, Moving
+18:13:20.446 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10649600
+18:13:20.448 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:20.448 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:20.448 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:20.447 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:20.447 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:21.452 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:21.452 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:21.452 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:21.452 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:21.453 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:21.453 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:21.452 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:21.453 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:21.453 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:21.453 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:21.696 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10747736, Moving
+18:13:21.946 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11004437, Moving
+18:13:22.196 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11059200
+18:13:22.197 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:22.197 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:22.198 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:22.198 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:22.198 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:23.201 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:23.201 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:23.201 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:23.202 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:23.202 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:23.202 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:23.202 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:23.202 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:23.202 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:23.202 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:23.447 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11159008, Moving
+18:13:23.698 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11415340, Moving
+18:13:23.947 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11468800
+18:13:23.948 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:23.949 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:23.949 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:23.948 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:23.948 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:24.963 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:24.963 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:24.963 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:24.963 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:24.964 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:24.964 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:24.964 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:24.964 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:24.964 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:24.964 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:25.198 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11557995, Moving
+18:13:25.448 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11816633, Moving
+18:13:25.697 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11878400
+18:13:25.699 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:25.699 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:25.699 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:25.697 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:25.698 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:26.710 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:26.710 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:26.710 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:26.710 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:26.711 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:26.711 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:26.711 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:26.711 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:26.711 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:26.711 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:26.947 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11970261, Moving
+18:13:27.197 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 12228311, Moving
+18:13:27.447 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 12288000
+18:13:27.447 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:27.447 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:27.448 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:27.448 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:27.449 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:28.458 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:28.458 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:28.458 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:28.458 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 0.5
+ 	Direction = 1
+18:13:28.459 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:28.459 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnDevice
+18:13:28.459 	Diagnostic 	70868919-1 	AddMessage: MoveRelative 	Step Size = 204800
+18:13:28.459 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::MoveRelative
+18:13:28.459 	Diagnostic 	70868919-1 	Changing State:  	Value = MovingState
+18:13:28.459 	Diagnostic 	70868919-1 	Move Relative
+ 	Calibrated Displacement = -204800
+ 	Original Displacement = 204800
+18:13:28.698 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 7668216, Moving
+18:13:28.948 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 7782400
+18:13:28.948 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::Moved
+18:13:28.948 	Diagnostic 	70868919-1 	Changing State:  	Value = IdleState
+18:13:28.949 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:28.949 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:28.950 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnTime
+18:13:29.955 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:29.955 	Diagnostic 	70868919 	70868919-1 - StateChange: Idle
+18:13:29.955 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:29.956 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:29.956 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:29.956 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:29.956 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:29.956 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:29.956 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:29.956 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:30.198 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 12191809, Moving
+18:13:30.448 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11932630, Moving
+18:13:30.698 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11878400
+18:13:30.699 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:30.699 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:30.704 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:30.704 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:30.704 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:31.718 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:31.718 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:31.718 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:31.719 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:31.719 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:31.719 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:31.719 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:31.719 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:31.719 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:31.719 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:31.948 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11793299, Moving
+18:13:32.198 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11532412, Moving
+18:13:32.448 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11468800
+18:13:32.448 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:32.448 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:32.449 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:32.450 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:32.450 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:33.450 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:33.450 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:33.451 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:33.451 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:33.451 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:33.451 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:33.451 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:33.451 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:33.451 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:33.451 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:33.702 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11364598, Moving
+18:13:33.953 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 11106824, Moving
+18:13:34.204 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11059200
+18:13:34.211 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:34.204 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:34.204 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:34.211 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:34.212 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:35.212 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:35.212 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:35.212 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:35.212 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:35.213 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:35.213 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:35.213 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:35.213 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:35.213 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:35.213 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:35.458 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10960237, Moving
+18:13:35.708 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10701744, Moving
+18:13:35.958 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10649600
+18:13:35.959 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:35.959 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:35.960 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:35.959 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:35.959 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:36.959 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:36.959 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:36.959 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:36.959 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:36.960 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:36.960 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:36.960 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:36.960 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:36.960 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:36.960 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:37.207 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10547956, Moving
+18:13:37.457 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10290109, Moving
+18:13:37.707 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10240000
+18:13:37.708 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:37.708 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:37.721 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:37.721 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:37.721 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:38.722 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:38.722 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:38.722 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:38.722 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:38.723 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:38.723 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:38.723 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:38.723 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:38.723 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:38.723 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:38.957 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 10149638, Moving
+18:13:39.207 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9889400, Moving
+18:13:39.457 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9830400
+18:13:39.458 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:39.458 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:39.459 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:39.459 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:39.459 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:40.470 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:40.470 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:40.471 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:40.471 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:40.471 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:40.471 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:40.471 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:40.471 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:40.471 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:40.471 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:40.709 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9737938, Moving
+18:13:40.959 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9478063, Moving
+18:13:41.209 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9420800
+18:13:41.209 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:41.209 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:41.210 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:41.210 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:41.211 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:42.217 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:42.217 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:42.217 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:42.217 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:42.218 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:42.218 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:42.218 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:42.218 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:42.218 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:42.218 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:42.459 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9325335, Moving
+18:13:42.708 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 9066127, Moving
+18:13:42.958 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9011200
+18:13:42.960 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:42.960 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:42.960 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:42.959 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:42.959 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:43.964 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:43.964 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:43.964 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:43.964 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 2
+18:13:43.965 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:43.965 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:43.965 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 4294557696
+18:13:43.965 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:43.965 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:43.965 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = 409600
+ 	Original Displacement = -409600
+18:13:44.208 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 8913147, Moving
+18:13:44.459 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101420, Position: 8654478, Moving
+18:13:44.709 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 8601600
+18:13:44.710 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:44.711 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:44.711 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:44.710 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:44.710 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:45.711 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:45.711 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:45.711 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:45.711 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 0.5
+ 	Direction = 1
+18:13:45.712 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:45.712 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnDevice
+18:13:45.712 	Diagnostic 	70868919-1 	AddMessage: MoveRelative 	Step Size = 204800
+18:13:45.712 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::MoveRelative
+18:13:45.712 	Diagnostic 	70868919-1 	Changing State:  	Value = MovingState
+18:13:45.712 	Diagnostic 	70868919-1 	Move Relative
+ 	Calibrated Displacement = -204800
+ 	Original Displacement = 204800
+18:13:45.959 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 7880370, Moving
+18:13:46.209 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 7987200
+18:13:46.209 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::Moved
+18:13:46.209 	Diagnostic 	70868919-1 	Changing State:  	Value = IdleState
+18:13:46.210 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:46.210 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:46.211 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnTime
+18:13:47.225 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:13:47.225 	Diagnostic 	70868919 	70868919-1 - StateChange: Idle
+18:13:47.226 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:47.226 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:47.226 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:47.226 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:47.226 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:47.226 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:47.226 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:47.226 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:47.459 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8689952, Moving
+18:13:47.709 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8948662, Moving
+18:13:47.959 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9011200
+18:13:47.961 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:47.960 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:47.960 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:47.961 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:47.961 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:48.972 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:48.972 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:48.972 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:48.972 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:48.973 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:48.973 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:48.973 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:48.973 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:48.973 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:48.973 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:49.209 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9102194, Moving
+18:13:49.459 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9360533, Moving
+18:13:49.709 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9420800
+18:13:49.710 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:49.710 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:49.711 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:49.710 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:49.710 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:50.720 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:50.720 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:50.720 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:50.720 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:50.721 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:50.721 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:50.721 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:50.721 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:50.721 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:50.721 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:50.962 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9516296, Moving
+18:13:51.213 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9774235, Moving
+18:13:51.464 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 9830400
+18:13:51.465 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:51.465 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:51.465 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:51.464 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:51.465 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:52.466 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:52.466 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:52.466 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:52.466 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:52.467 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:52.467 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:52.467 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:52.467 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:52.467 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:52.467 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:52.719 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 9935774, Moving
+18:13:52.970 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10191029, Moving
+18:13:53.220 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10240000
+18:13:53.220 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:53.220 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:53.221 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:53.221 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:53.221 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:54.228 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:54.228 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:54.228 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:54.228 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:54.229 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:54.229 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:54.229 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:54.229 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:54.229 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:54.229 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:54.469 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10335367, Moving
+18:13:54.719 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10592742, Moving
+18:13:54.969 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 10649600
+18:13:54.971 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:54.971 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:54.971 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:54.970 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:54.970 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:55.975 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:55.975 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:55.975 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:55.975 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:55.976 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:55.976 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:55.976 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:55.976 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:55.976 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:55.976 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:56.219 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 10747619, Moving
+18:13:56.469 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11004450, Moving
+18:13:56.719 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11059200
+18:13:56.721 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:56.721 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:56.721 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:56.720 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:56.720 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:57.724 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:57.724 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:57.724 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:57.724 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:57.725 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:57.725 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:57.725 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:57.725 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:57.725 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:57.725 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:57.971 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11158873, Moving
+18:13:58.220 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11415183, Moving
+18:13:58.471 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11468800
+18:13:58.473 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:13:58.473 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:58.473 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:13:58.472 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:13:58.472 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:13:59.486 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:59.486 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:13:59.486 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:13:59.486 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:13:59.487 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:13:59.487 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:13:59.487 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:13:59.487 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:13:59.487 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:13:59.487 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:13:59.720 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11558175, Moving
+18:13:59.970 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11816814, Moving
+18:14:00.220 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 11878400
+18:14:00.221 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:14:00.221 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:14:00.222 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:14:00.222 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:14:00.222 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:14:01.233 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:14:01.233 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:14:01.233 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:14:01.233 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 1
+ 	Direction = 1
+18:14:01.234 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:14:01.234 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnDevice
+18:14:01.234 	Diagnostic 	70868919-2 	AddMessage: MoveRelative 	Step Size = 409600
+18:14:01.234 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::MoveRelative
+18:14:01.234 	Diagnostic 	70868919-2 	Changing State:  	Value = MovingState
+18:14:01.234 	Diagnostic 	70868919-2 	Move Relative
+ 	Calibrated Displacement = -409600
+ 	Original Displacement = 409600
+18:14:01.470 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 11970331, Moving
+18:14:01.720 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 12228371, Moving
+18:14:01.970 	Diagnostic 	70868919-2 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 12288000
+18:14:01.971 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:14:01.971 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:14:01.972 	Diagnostic 	70868919 	70868919-2 - StateChange: WaitingOnTime
+18:14:01.971 	Diagnostic 	70868919-2 	Processing Message:  	Value = ::Moved
+18:14:01.971 	Diagnostic 	70868919-2 	Changing State:  	Value = IdleState
+18:14:02.981 	Diagnostic 	70868919 	70868919-2 - StateChange: Working
+18:14:02.981 	Diagnostic 	70868919 	70868919-2 - StateChange: Idle
+18:14:02.981 	Diagnostic 	0 	Sequencer - StateChange: Working
+18:14:02.981 	Diagnostic 	70868919 	Invoke Action: : Performs a MoveRelative command
+ 	Step = 0.5
+ 	Direction = 1
+18:14:02.982 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:14:02.982 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnDevice
+18:14:02.982 	Diagnostic 	70868919-1 	AddMessage: MoveRelative 	Step Size = 204800
+18:14:02.982 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::MoveRelative
+18:14:02.982 	Diagnostic 	70868919-1 	Changing State:  	Value = MovingState
+18:14:02.982 	Diagnostic 	70868919-1 	Move Relative
+ 	Calibrated Displacement = -204800
+ 	Original Displacement = 204800
+18:14:03.221 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101410, Position: 8077345, Moving
+18:14:03.471 	Diagnostic 	70868919-1 	MOTOR_REPLY_STATUS received - Status: 80101400, Position: 8192000
+18:14:03.471 	Diagnostic 	70868919-1 	Processing Message:  	Value = ::Moved
+18:14:03.471 	Diagnostic 	70868919-1 	Changing State:  	Value = IdleState
+18:14:03.472 	Diagnostic 	70868919 	Task Completed: Performs a MoveRelative command
+18:14:03.472 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:14:03.473 	Diagnostic 	70868919 	70868919-1 - StateChange: WaitingOnTime
+18:14:04.478 	Diagnostic 	70868919 	70868919-1 - StateChange: Working
+18:14:04.478 	Diagnostic 	70868919 	70868919-1 - StateChange: Idle
+18:14:04.484 	Diagnostic 	0 	Sequencer - StateChange: Idle
+
